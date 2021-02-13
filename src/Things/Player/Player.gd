@@ -9,6 +9,7 @@ onready var _beat1_timer: Timer = $Audio/Beat1Timer
 onready var _beat2_timer: Timer = $Audio/Beat2Timer
 onready var _callout_timer: Timer = $Audio/CalloutTimer
 onready var _tween: Tween = $Tween
+onready var _visual: Node2D = $Visual
 
 var _motion: Vector2 = Vector2.ZERO
 var _direction: Vector2 = Vector2.ZERO
@@ -84,6 +85,9 @@ func spawn_noise_ring(radius: float = 200) -> void:
 	_tween.interpolate_property(ring, "radius", 0, radius, time, Tween.TRANS_SINE, Tween.EASE_OUT)
 	_tween.interpolate_property(ring, "opacity", 1, 0, time, Tween.TRANS_SINE, Tween.EASE_OUT)
 	_tween.interpolate_property(ring, "width", 10, 0, time, Tween.TRANS_SINE, Tween.EASE_OUT)
+
+	_tween.interpolate_property(_visual, "scale", _visual.scale, Vector2(.8, .8), .1)
+	_tween.interpolate_property(_visual, "scale", Vector2(.8, .8), _visual.scale, .2, Tween.TRANS_SINE, Tween.EASE_OUT, .1)
 
 	_tween.start()
 
