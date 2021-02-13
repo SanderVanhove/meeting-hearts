@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Things/Enemy/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Things/Player/Player.tscn" type="PackedScene" id=2]
+
+[node name="Level" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 480.123, 415.704 )
+
+[node name="Enemy" parent="." instance=ExtResource( 1 )]
+position = Vector2( 317.94, 226.824 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color( 0.133333, 0, 0.243137, 1 )
+invert_enable = true
+polygon = PoolVector2Array( 116.906, 24.1766, 297.076, 78.9419, 416.131, -43.2879, 787.583, -44.8753, 787.583, 54.3372, 966.96, 56.7183, 1066.97, 139.263, 1004.26, 383.723, 997.914, 624.214, 648.686, 560.718, 247.867, 561.512, 176.434, 628.183, -87.0746, 600.403, -91.8368, 181.329 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -128, -128, 1144, -128, 1136, 688, -128, 704, -128, -16, 120, 24, -96, 184, -88, 600, 176, 632, 248, 560, 648, 560, 1000, 624, 1008, 376, 1072, 136, 968, 56, 792, 48, 792, -48, 416, -48, 296, 80, 120, 24 )
