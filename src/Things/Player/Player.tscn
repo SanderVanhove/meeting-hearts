@@ -71,7 +71,7 @@ one_shot = true
 
 [node name="Tween" type="Tween" parent="."]
 
-[node name="Light2D" type="Light2D" parent="."]
+[node name="Highlight" type="Light2D" parent="."]
 texture = ExtResource( 6 )
 texture_scale = 2.0
 energy = 0.6

@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const ACCELERATION: float = 2000.0
+const ACCELERATION: float = 2300.0
 const MAX_SPEED: float = 1000.0
 
 onready var _beat1: AudioStreamPlayer2D = $Audio/Beat1

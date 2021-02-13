@@ -15,10 +15,11 @@ script = ExtResource( 2 )
 position = Vector2( 0, -5 )
 texture = ExtResource( 1 )
 
-[node name="Area" type="Area2D" parent="."]
+[node name="Area" type="Area2D" parent="Visual/Sprite"]
+position = Vector2( 0, 5 )
 
-[node name="CollisionShape" type="CollisionShape2D" parent="Area"]
+[node name="CollisionShape" type="CollisionShape2D" parent="Visual/Sprite/Area"]
 shape = SubResource( 1 )
 
 [node name="Tween" type="Tween" parent="."]
-[connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]
+[connection signal="area_entered" from="Visual/Sprite/Area" to="." method="_on_Area_area_entered"]
