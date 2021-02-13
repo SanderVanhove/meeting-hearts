@@ -7,6 +7,8 @@ onready var _beat1: AudioStreamPlayer2D = $Audio/Beat1
 onready var _beat2: AudioStreamPlayer2D = $Audio/Beat2
 onready var _beat1_timer: Timer = $Audio/Beat1Timer
 onready var _beat2_timer: Timer = $Audio/Beat2Timer
+onready var _callout_timer: Timer = $Audio/CalloutTimer
+onready var _tween: Tween = $Tween
 
 var _motion: Vector2 = Vector2.ZERO
 var _direction: Vector2 = Vector2.ZERO
@@ -26,6 +28,31 @@ func _input(event: InputEvent) -> void:
 
 	_direction = direction.normalized()
 
+	if event.is_action_pressed("call"):
+		do_callout()
+
+
+func do_callout() -> void:
+	_beat1_timer.stop()
+	_beat2_timer.stop()
+
+	_beat1.volume_db = 0
+	_beat2.volume_db = 0
+
+	_beat1.play()
+	spawn_noise_ring(300)
+
+	_callout_timer.start()
+	yield(_callout_timer, "timeout")
+
+	_beat2.play()
+	spawn_noise_ring(300)
+	yield(_beat2, "finished")
+
+	_beat1_timer.start()
+	_beat1.volume_db = -8
+	_beat2.volume_db = -8
+
 
 func _physics_process(delta: float) -> void:
 	if _direction == Vector2.ZERO:
@@ -36,7 +63,7 @@ func _physics_process(delta: float) -> void:
 	_motion = move_and_slide(_motion)
 
 
-func apply_friction (delta: float) -> void:
+func apply_friction(delta: float) -> void:
 	var amount = ACCELERATION * delta
 	if _motion.length() > amount:
 		_motion -= _motion.normalized() * amount
@@ -44,16 +71,36 @@ func apply_friction (delta: float) -> void:
 		_motion = Vector2.ZERO
 
 
-func apply_movement (delta: float) -> void:
+func apply_movement(delta: float) -> void:
 	_motion += _direction * ACCELERATION * delta
 	_motion = _motion.clamped(MAX_SPEED)
+
+
+func spawn_noise_ring(radius: float = 200) -> void:
+	var ring = Ring.new()
+	add_child(ring)
+
+	var time = .3
+	_tween.interpolate_property(ring, "radius", 0, radius, time, Tween.TRANS_SINE, Tween.EASE_OUT)
+	_tween.interpolate_property(ring, "opacity", 1, 0, time, Tween.TRANS_SINE, Tween.EASE_OUT)
+	_tween.interpolate_property(ring, "width", 10, 0, time, Tween.TRANS_SINE, Tween.EASE_OUT)
+
+	_tween.start()
+
+	yield(_tween, "tween_all_completed")
+
+	remove_child(ring)
 
 
 func _on_Beat1Timer_timeout() -> void:
 	_beat1.play()
 	_beat2_timer.start()
 
+	spawn_noise_ring()
+
 
 func _on_Beat2Timer_timeout() -> void:
 	_beat2.play()
 	_beat1_timer.start()
+
+	spawn_noise_ring()

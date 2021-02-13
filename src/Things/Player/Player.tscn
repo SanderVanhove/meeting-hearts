@@ -1,13 +1,22 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Things/Player/player.png" type="Texture" id=1]
 [ext_resource path="res://Things/Player/Player.gd" type="Script" id=2]
 [ext_resource path="res://Things/Player/light.png" type="Texture" id=3]
 [ext_resource path="res://Things/Player/heartbeat_1.wav" type="AudioStream" id=4]
 [ext_resource path="res://Things/Player/heartbeat_2.wav" type="AudioStream" id=5]
+[ext_resource path="res://Things/Player/highlight.png" type="Texture" id=6]
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
+
+[node name="Light" type="Light2D" parent="."]
+position = Vector2( 0, 2.99658 )
+scale = Vector2( 1.45869, 1.11251 )
+texture = ExtResource( 3 )
+texture_scale = 2.0
+mode = 3
+shadow_enabled = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -1245.0
@@ -37,14 +46,6 @@ drag_margin_top = 0.1
 drag_margin_right = 0.1
 drag_margin_bottom = 0.1
 
-[node name="Light" type="Light2D" parent="."]
-position = Vector2( 0, 2.99658 )
-scale = Vector2( 1.45869, 1.11251 )
-texture = ExtResource( 3 )
-texture_scale = 2.0
-mode = 3
-shadow_enabled = true
-
 [node name="Audio" type="Node2D" parent="."]
 
 [node name="Beat1" type="AudioStreamPlayer2D" parent="Audio"]
@@ -60,8 +61,19 @@ one_shot = true
 autostart = true
 
 [node name="Beat2Timer" type="Timer" parent="Audio"]
-wait_time = 0.4
+wait_time = 0.5
 one_shot = true
 autostart = true
+
+[node name="CalloutTimer" type="Timer" parent="Audio"]
+wait_time = 0.2
+one_shot = true
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 6 )
+texture_scale = 2.0
+energy = 0.6
 [connection signal="timeout" from="Audio/Beat1Timer" to="." method="_on_Beat1Timer_timeout"]
 [connection signal="timeout" from="Audio/Beat2Timer" to="." method="_on_Beat2Timer_timeout"]
