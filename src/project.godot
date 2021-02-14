@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Things/Joystick/Joystick.gd"
 }, {
+"base": "Node2D",
+"class": "Level",
+"language": "GDScript",
+"path": "res://Screens/Level/Level.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
@@ -38,6 +43,7 @@ _global_script_class_icons={
 "Arrow": "",
 "Goal": "",
 "Joystick": "",
+"Level": "",
 "Player": "",
 "Ring": ""
 }

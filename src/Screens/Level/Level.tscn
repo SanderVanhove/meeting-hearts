@@ -47,4 +47,9 @@ shape = SubResource( 1 )
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="Spawns" type="Node2D" parent="."]
+
+[node name="DeadTimer" type="Timer" parent="."]
+one_shot = true
 [connection signal="done" from="VoiceOvers/EndVoiceOver" to="." method="_on_EndVoiceOver_done"]

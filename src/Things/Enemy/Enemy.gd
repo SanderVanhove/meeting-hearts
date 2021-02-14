@@ -7,6 +7,12 @@ const MOVEMENT_SPEED: float = 700.0
 onready var _tween: Tween = $Tween
 onready var _visual: Node2D = $Visual
 
+onready var _og_position: Vector2 = position
+
+
+func reset() -> void:
+	position = _og_position
+
 
 func _on_Area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("heartbeat_ring"):

@@ -1,8 +1,17 @@
 extends KinematicBody2D
 class_name Player
 
-const ACCELERATION: float = 2300.0
+signal died
+signal reset
+
+const ACCELERATION: float = 2500.0
 const MAX_SPEED: float = 1000.0
+
+const hit_noises: Array = [
+	preload("res://Things/Player/hit1.wav"),
+	preload("res://Things/Player/hit2.wav"),
+	preload("res://Things/Player/hit3.wav"),
+]
 
 var _goal: Goal
 
@@ -16,13 +25,23 @@ onready var _visual: Node2D = $Visual
 onready var _light: Light2D = $Light
 onready var _joystick = $Joystick
 onready var _arrow: Arrow = $Arrow
+onready var _hit: AudioStreamPlayer = $Audio/Hit
 
 var _motion: Vector2 = Vector2.ZERO
 var _direction: Vector2 = Vector2.ZERO
+var _dead: bool = false
+var _hit_sound_index: int = 0
 
 
 func _ready() -> void:
 	_light.visible = true
+
+
+func reset() -> void:
+	_dead = false
+	_beat1_timer.start()
+
+	emit_signal("reset")
 
 
 func set_goal(goal: Node2D) -> void:
@@ -31,6 +50,10 @@ func set_goal(goal: Node2D) -> void:
 
 
 func _input(event: InputEvent) -> void:
+	if _dead:
+		_direction = Vector2.ZERO
+		return
+
 	var direction: Vector2 = Vector2.ZERO
 
 	if Input.is_action_pressed("ui_left"):
@@ -136,3 +159,20 @@ func _on_Beat2Timer_timeout() -> void:
 
 func _on_Button_pressed() -> void:
 	do_callout()
+
+
+func _on_Area_area_entered(area: Area2D) -> void:
+	if not area.is_in_group("enemy"):
+		return
+
+	_beat1_timer.stop()
+	_beat2_timer.stop()
+
+	_hit.stream = hit_noises[_hit_sound_index]
+	_hit_sound_index = (_hit_sound_index + 1) % len(hit_noises)
+	_hit.play()
+
+	_motion = Vector2.ZERO
+
+	_dead = true
+	emit_signal("died")
