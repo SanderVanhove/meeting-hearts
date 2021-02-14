@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/level2_02.wav-08f42aea4dafe3b6df565cfeea30b98a.sample"
+
+[deps]
+
+source_file="res://Things/VoiceOver/AudioLines/level2_02.wav"
+dest_files=[ "res://.import/level2_02.wav-08f42aea4dafe3b6df565cfeea30b98a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
