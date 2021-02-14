@@ -16,6 +16,12 @@ onready var _enemies: Node2D = $Enemies
 
 
 func _ready() -> void:
+	for spawn in _spawns.get_children():
+		spawn.connect("new_spawn", self, "new_spawn")
+
+		if spawn.is_current:
+			_spawn = spawn
+
 	_smoke.visible = true
 	_player.position = _spawn.position
 	_player.connect("died", self, "player_respawn")
@@ -25,9 +31,6 @@ func _ready() -> void:
 
 	_tween.interpolate_property(self, "modulate:a", 0, 1, 1)
 	_tween.start()
-
-	for spawn in _spawns.get_children():
-		spawn.connect("new_spawn", self, "new_spawn")
 
 
 func _on_EndVoiceOver_done() -> void:

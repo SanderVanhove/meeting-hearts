@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Screens/Level/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Things/Wall/Wall.tscn" type="PackedScene" id=2]
@@ -7,9 +7,10 @@
 [ext_resource path="res://Things/VoiceOver/AudioLines/oh_hey_welcome.wav" type="AudioStream" id=5]
 [ext_resource path="res://Screens/Level/Level2.gd" type="Script" id=6]
 [ext_resource path="res://Things/Spawn/Spawn.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Screens/Level/vector_face.png" type="Texture" id=8]
 
 [sub_resource type="OccluderPolygon2D" id=1]
-polygon = PoolVector2Array( 928, -736, 4448, -736, 5344, 192, 5494.96, 2844.58, 5152, 2880, 5184, 3136, 5510.13, 3111.1, 5568, 4128, 6848, 4160, 6816, -1280, -832, -1280, -832, 4160, 4512, 4160, 4447.17, 3260.47, 4832, 3168, 4800, 2912, 4425.19, 2955.53, 4256, 608, 4000, 288, 928, 288, 576, 96, 448, -128, 448, -352, 608, -640 )
+polygon = PoolVector2Array( 928, -736, 4448, -736, 5344, 192, 5494.96, 2844.58, 5152, 2880, 5184, 3136, 5510.13, 3111.1, 5568, 4128, 6553.09, 4152.63, 6848, 3808, 6816, -1280, -832, -1280, -832, 4160, 4512, 4160, 4447.17, 3260.47, 4832, 3168, 4800, 2912, 4425.19, 2955.53, 4256, 608, 4000, 288, 928, 288, 576, 96, 448, -128, 448, -352, 608, -640 )
 
 [sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( 384, -384, 384, -192, 512, -192, 512, -384 )
@@ -17,17 +18,36 @@ polygon = PoolVector2Array( 384, -384, 384, -192, 512, -192, 512, -384 )
 [sub_resource type="OccluderPolygon2D" id=3]
 polygon = PoolVector2Array( -224, -256, 224, -320, 256, -64, -192, 0 )
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 256, 224 )
+[sub_resource type="OccluderPolygon2D" id=4]
+polygon = PoolVector2Array( 448, -384, 384, -352, 256, -320, -1600, -288, -1536, -160, -1504, 96, -1600, 352, -1600, 544, -1792, 576, -2368, 640, -2816, 448, -2944, -64, -2784, -384, -2688, -544, -3200, -544, -3200, 1024, 448, 1024 )
+
+[sub_resource type="OccluderPolygon2D" id=8]
+polygon = PoolVector2Array( -544, -1216, -32, -448, 768, -352, 3552, -352, 3776, -704, 3872, -1184, 3872, -1568, 3776, -2016, 3424, -2208, 2784, -2272, 2080, -2208, 1728, -2080, 1728, -2560, 4160, -2464, 4000, -128, -704, -160, -672, -1216 )
 
 [sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 256, 224 )
+
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 640, 224 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 704, 64 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 608, 224 )
 
 [node name="Level2" instance=ExtResource( 1 )]
 script = ExtResource( 6 )
 
 [node name="Goal" parent="." index="1"]
-position = Vector2( 6688, 5952 )
+position = Vector2( 7200, 4192 )
+
+[node name="Smoke" parent="." index="2"]
+visible = true
+margin_left = -1600.0
+margin_top = -800.0
+margin_right = 7840.0
+margin_bottom = 5856.0
 
 [node name="Wall" parent="Wals" index="0" instance=ExtResource( 2 )]
 position = Vector2( -1184, 224 )
@@ -45,13 +65,21 @@ occluder = SubResource( 2 )
 position = Vector2( 3744, 2304 )
 occluder = SubResource( 3 )
 
+[node name="Wall5" parent="Wals" index="4" instance=ExtResource( 2 )]
+position = Vector2( 2880, 4896 )
+occluder = SubResource( 4 )
+
+[node name="Wall6" parent="Wals" index="5" instance=ExtResource( 2 )]
+position = Vector2( 3872, 6080 )
+occluder = SubResource( 8 )
+
 [node name="StartOverVoiceOver" parent="VoiceOvers" index="1" instance=ExtResource( 4 )]
 position = Vector2( 1152, 2048 )
 text = [ "Its ok to start over." ]
 audio_stream = [ ExtResource( 5 ) ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VoiceOvers/StartOverVoiceOver" index="4"]
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="Enemy" parent="Enemies" index="0" instance=ExtResource( 3 )]
 position = Vector2( 992, 0 )
@@ -65,11 +93,100 @@ position = Vector2( 3872, 1184 )
 [node name="Enemy4" parent="Enemies" index="3" instance=ExtResource( 3 )]
 position = Vector2( 3808, 3232 )
 
+[node name="Enemy7" parent="Enemies" index="4" instance=ExtResource( 3 )]
+position = Vector2( 2176, 4480 )
+
+[node name="Enemy5" parent="Enemies" index="5" instance=ExtResource( 3 )]
+position = Vector2( 5024, 4512 )
+
+[node name="Enemy6" parent="Enemies" index="6" instance=ExtResource( 3 )]
+position = Vector2( 5024, 4864 )
+
+[node name="Enemy8" parent="Enemies" index="7" instance=ExtResource( 3 )]
+position = Vector2( 5440, 4672 )
+
+[node name="Enemy9" parent="Enemies" index="8" instance=ExtResource( 3 )]
+position = Vector2( 5024, 5248 )
+
+[node name="Enemy10" parent="Enemies" index="9" instance=ExtResource( 3 )]
+position = Vector2( 5024, 5568 )
+
+[node name="Enemy11" parent="Enemies" index="10" instance=ExtResource( 3 )]
+position = Vector2( 5440, 5408 )
+
+[node name="Enemy12" parent="Enemies" index="11" instance=ExtResource( 3 )]
+position = Vector2( 5696, 4224 )
+
+[node name="Enemy13" parent="Enemies" index="12" instance=ExtResource( 3 )]
+position = Vector2( 5824, 4928 )
+
+[node name="Enemy14" parent="Enemies" index="13" instance=ExtResource( 3 )]
+position = Vector2( 5824, 5235 )
+
+[node name="Enemy15" parent="Enemies" index="14" instance=ExtResource( 3 )]
+position = Vector2( 5792, 5664 )
+
+[node name="Enemy16" parent="Enemies" index="15" instance=ExtResource( 3 )]
+position = Vector2( 6720, 4480 )
+
+[node name="Enemy17" parent="Enemies" index="16" instance=ExtResource( 3 )]
+position = Vector2( 6144, 4352 )
+
+[node name="Enemy18" parent="Enemies" index="17" instance=ExtResource( 3 )]
+position = Vector2( 6240, 4768 )
+
+[node name="Enemy19" parent="Enemies" index="18" instance=ExtResource( 3 )]
+position = Vector2( 6112, 3936 )
+
+[node name="Enemy20" parent="Enemies" index="19" instance=ExtResource( 3 )]
+position = Vector2( 6176, 5440 )
+
+[node name="Enemy21" parent="Enemies" index="20" instance=ExtResource( 3 )]
+position = Vector2( 6528, 5664 )
+
+[node name="Enemy22" parent="Enemies" index="21" instance=ExtResource( 3 )]
+position = Vector2( 6912, 5408 )
+
+[node name="Enemy23" parent="Enemies" index="22" instance=ExtResource( 3 )]
+position = Vector2( 7200, 5664 )
+
+[node name="Enemy24" parent="Enemies" index="23" instance=ExtResource( 3 )]
+position = Vector2( 7264, 5152 )
+
+[node name="Enemy25" parent="Enemies" index="24" instance=ExtResource( 3 )]
+position = Vector2( 6528, 5152 )
+
+[node name="Enemy26" parent="Enemies" index="25" instance=ExtResource( 3 )]
+position = Vector2( 6880, 4896 )
+
+[node name="Enemy27" parent="Enemies" index="26" instance=ExtResource( 3 )]
+position = Vector2( 7552, 4864 )
+
+[node name="Enemy28" parent="Enemies" index="27" instance=ExtResource( 3 )]
+position = Vector2( 6496, 4160 )
+
 [node name="Spawn" parent="Spawns" index="0" instance=ExtResource( 7 )]
 position = Vector2( 3520, 736 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawns/Spawn" index="0"]
 position = Vector2( 32, -32 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
+
+[node name="Spawn2" parent="Spawns" index="1" instance=ExtResource( 7 )]
+position = Vector2( 3712, 2688 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawns/Spawn2" index="0"]
+shape = SubResource( 7 )
+
+[node name="Spawn3" parent="Spawns" index="2" instance=ExtResource( 7 )]
+position = Vector2( 3936, 4480 )
+is_current = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawns/Spawn3" index="0"]
+shape = SubResource( 9 )
+
+[node name="vector_face" type="Sprite" parent="." index="10"]
+position = Vector2( 640, 4928 )
+texture = ExtResource( 8 )
 
 [editable path="VoiceOvers/EndVoiceOver"]

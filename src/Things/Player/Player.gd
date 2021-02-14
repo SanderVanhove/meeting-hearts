@@ -4,7 +4,7 @@ class_name Player
 signal died
 signal reset
 
-const ACCELERATION: float = 2500.0
+const ACCELERATION: float = 3000.0
 const MAX_SPEED: float = 1000.0
 
 const hit_noises: Array = [
