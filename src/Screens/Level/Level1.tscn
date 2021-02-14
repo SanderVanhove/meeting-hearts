@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Screens/Level/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Things/Wall/Wall.tscn" type="PackedScene" id=2]
@@ -17,60 +17,63 @@
 polygon = PoolVector2Array( 960, 96, 5568, 96, 5568, -352, -224, -352, -224, 1696, 5568, 1696, 5568, 1120, 928, 1120, 480, 1056, 256, 864, 192, 576, 288, 288, 576, 96 )
 
 [sub_resource type="OccluderPolygon2D" id=2]
-polygon = PoolVector2Array( 5184, -352, 5184, 416, 3648, 416, 3392, 32, 2560, 32, 2304, 416, 2304, 928, 2528, 1280, 3392, 1280, 3648, 1024, 5728, 1024, 5728, -928, 6208, -928, 6208, 1440, 2112, 1440, 2112, -352 )
+polygon = PoolVector2Array( 5184, -352, 5184, 321.558, 4832, 416, 3648, 416, 3584, 160, 3392, 32, 2912, 128, 2560, 32, 2240, 320, 2304, 416, 2432, 608, 2304, 728.015, 2208, 960, 2304, 928, 2400, 1216, 2528, 1280, 3328, 1376, 3392, 1280, 3584, 1152, 3648, 1024, 5024, 1024, 5728, 868.364, 5792, 64, 5728, -800, 5801.99, -928, 6208, -928, 6208, 1440, 2112, 1440, 2112, -352 )
 
 [sub_resource type="OccluderPolygon2D" id=3]
-polygon = PoolVector2Array( -1152, -480, -1152, -672, 128, -672, 128, 1120, -384, 1376, -384, 2144, 128, 2400, 640, 2400, 1152, 2144, 3712, 1888, 3712, -672, 3968, -672, 3968, 2656, -1152, 2656 )
+polygon = PoolVector2Array( -1152, -480, -1152, -672, -736, -608, -160, -640, 128, -512, 96, -64, 192, 736, 128, 1120, -160, 1152, -384, 1376, -288, 1760, -384, 2144, -128, 2176, 128, 2400, 448, 2336, 512, 2144, 832, 2080, 1152, 2144, 2560, 2112, 3264, 1792, 3712, 2016, 3584, 896, 3616, 224, 3584, -384, 3712, -672, 3968, -672, 3968, 2656, -1152, 2656 )
 
 [sub_resource type="OccluderPolygon2D" id=4]
-polygon = PoolVector2Array( 1760, 1248, 3040, 1248, 3040, -800, 2592, -896, 2272, -1312, 1248, -1312, 1248, 480, 1504, 480, 1760, 736 )
+polygon = PoolVector2Array( 1760, 1248, 2272, 1152, 2464, 1280, 3040, 1248, 3040, 736, 2944, 224, 3072, -192, 3040, -800, 2592, -896, 2528, -1184, 2272, -1312, 1600, -1280, 1376, -1152, 1280, -832, 1216, -544, 1184, 64, 1248, 480, 1504, 480, 1760, 736, 1792, 960 )
 
 [sub_resource type="OccluderPolygon2D" id=5]
-polygon = PoolVector2Array( 2080, 704, 2080, -1632, 3616, -1632, 3872, -2144, 4352, -2240, 4896, -2240, 5280, -2080, 5408, -1632, 7968, -1632, 7968, 1312, 8224, 1312, 8224, -2400, 1824, -2400, 1824, 704 )
+polygon = PoolVector2Array( 2080, 704, 2016, 384, 2080, 87.6221, 2144, -128, 2080, -174.442, 2144, -672, 2080, -992, 1920, -1376, 2175.06, -1632, 3616, -1632, 3872, -2144, 4160, -2080, 4352, -2240, 4384, -2080, 4896, -2240, 5312, -2240, 5280, -2080, 5408, -1632, 6048, -1728, 6688, -1696, 7456, -1440, 7968, -1632, 7904, -1408, 7808, 96, 7840, 320, 8032, 864, 7968, 1312, 8224, 1312, 8224, -2400, 1824, -2400, 1824, 704 )
 
 [sub_resource type="OccluderPolygon2D" id=6]
-polygon = PoolVector2Array( 0, 0, 0, 352, 512, 352, 512, -32 )
+polygon = PoolVector2Array( 0, 0, 0, 288, 160, 352, 480, 288, 512, -32 )
 
 [sub_resource type="OccluderPolygon2D" id=7]
 polygon = PoolVector2Array( 288, -256, 288, -64, 544, -64, 544, -256 )
 
 [sub_resource type="OccluderPolygon2D" id=8]
-polygon = PoolVector2Array( 32, -1088, 32, 3296, 384, 3424, 544, 3776, 2592, 3584, 2592, 1760, 2080, 1440, 2048, 768, 2592, 448, 2592, -1312, 2336, -1568, 544, -1568, 416, -1184 )
+polygon = PoolVector2Array( 32, -1088, -64, -704, -128, -32, -64, 512, -128, 1664, -160, 2080, -32, 2208, -64, 2720, 32, 3296, 384, 3424, 544, 3776, 1696, 4000, 2048, 3616, 2592, 3584, 2464, 3104, 2528, 1920, 2592, 1760, 2272, 1664, 2080, 1440, 2048, 768, 2304, 512, 2592, 448, 2464, -256, 2656, -736, 2592, -1312, 2336, -1568, 1824, -1760, 1248, -1632, 544, -1568, 416, -1184 )
 
 [sub_resource type="OccluderPolygon2D" id=9]
-polygon = PoolVector2Array( -2688, -992, -2144, -1088, 1120, -1088, 2304, -1632, 3968, -2080, 5024, -2080, 5024, 1984, -2144, 1984, -2144, -64, -2656, -320, -2688, 2624, 5248, 2208, 5152, -2272, 1088, -2272, -2688, -1120 )
+polygon = PoolVector2Array( -2688, -992, -2144, -1088, 1120, -1088, 2304, -1632, 3968, -2080, 5024, -2080, 5024, 1984, 2368, 1952, -96, 1984, -1280, 1888, -2144, 1984, -1984, 1568, -2048, 864, -2144, -64, -2656, -320, -2688, 2624, 5248, 2208, 5152, -2272, 1088, -2272, -2688, -1120 )
 
 [sub_resource type="OccluderPolygon2D" id=10]
-polygon = PoolVector2Array( 3584, 224, 3584, -1824, 1280, -1824, 1280, 224, 2048, 224, 2048, -1312, 2816, -1312, 2816, 224 )
+polygon = PoolVector2Array( 3584, 224, 3584, -1824, 1280, -1824, 1280, 224, 1632, 256, 2048, 224, 2048, -1312, 2816, -1312, 2816, 224 )
 
 [sub_resource type="OccluderPolygon2D" id=11]
 polygon = PoolVector2Array( -1024, -896, -1024, -640, -768, -640, -768, -896 )
 
 [sub_resource type="OccluderPolygon2D" id=12]
-polygon = PoolVector2Array( -224, -128, 1632, -736, 1920, -736, 1952, -544, 2144, -416, 2464, -416, 2464, 1408, 2272, 1408, -480, 128 )
+polygon = PoolVector2Array( -224, -128, 1632, -736, 1920, -736, 1952, -544, 2144, -416, 2464, -416, 2464, 1408, 2272, 1408, 1632, 1056, -256, 608, -480, 128 )
 
 [sub_resource type="OccluderPolygon2D" id=13]
 polygon = PoolVector2Array( -1536, -384, 1440, -512, 1728, 32, 672, -256, 672, 0, 160, 0, -96, -256, -864, -256, -864, 0, -1120, 0, -1120, -256, -1632, -256 )
 
-[sub_resource type="RectangleShape2D" id=14]
-extents = Vector2( 352, 512 )
+[sub_resource type="OccluderPolygon2D" id=14]
+polygon = PoolVector2Array( -96, -96, 96, -224, 448, -288, 544, -64, 736, 160, 320, 384, 0, 256, -32, -32 )
 
 [sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 640, 640 )
+extents = Vector2( 352, 512 )
 
 [sub_resource type="RectangleShape2D" id=16]
-extents = Vector2( 640, 672 )
+extents = Vector2( 640, 640 )
 
 [sub_resource type="RectangleShape2D" id=17]
-extents = Vector2( 640, 576 )
+extents = Vector2( 640, 672 )
 
 [sub_resource type="RectangleShape2D" id=18]
-extents = Vector2( 640, 864 )
+extents = Vector2( 640, 576 )
 
 [sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 1024, 672 )
+extents = Vector2( 640, 864 )
 
 [sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 1024, 672 )
+
+[sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 512, 352 )
 
 [node name="Level1" instance=ExtResource( 1 )]
@@ -325,6 +328,10 @@ occluder = SubResource( 12 )
 position = Vector2( 13920, 512 )
 occluder = SubResource( 13 )
 
+[node name="Wall58" parent="Wals" index="57" instance=ExtResource( 2 )]
+position = Vector2( 7136, -2976 )
+occluder = SubResource( 14 )
+
 [node name="VoiceOver" parent="VoiceOvers" index="0" instance=ExtResource( 4 )]
 position = Vector2( 96, 256 )
 text = [ "Ah, another broken hearth, welcome.
@@ -334,7 +341,7 @@ delay = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VoiceOvers/VoiceOver" index="3"]
 position = Vector2( 32, -96 )
-shape = SubResource( 14 )
+shape = SubResource( 15 )
 
 [node name="VoiceOver2" parent="VoiceOvers" index="1" instance=ExtResource( 4 )]
 position = Vector2( 4992, 288 )
@@ -344,7 +351,7 @@ audio_stream = [ ExtResource( 6 ) ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VoiceOvers/VoiceOver2" index="4"]
 position = Vector2( 320, -96 )
-shape = SubResource( 15 )
+shape = SubResource( 16 )
 
 [node name="VoiceOver3" parent="VoiceOvers" index="2" instance=ExtResource( 4 )]
 position = Vector2( 2880, 2368 )
@@ -354,7 +361,7 @@ audio_stream = [ ExtResource( 7 ) ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VoiceOvers/VoiceOver3" index="4"]
 position = Vector2( -320, -64 )
-shape = SubResource( 16 )
+shape = SubResource( 17 )
 
 [node name="VoiceOver4" parent="VoiceOvers" index="3" instance=ExtResource( 4 )]
 position = Vector2( 10240, 320 )
@@ -364,7 +371,7 @@ audio_stream = [ ExtResource( 8 ) ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VoiceOvers/VoiceOver4" index="4"]
 position = Vector2( 96, -192 )
-shape = SubResource( 17 )
+shape = SubResource( 18 )
 
 [node name="VoiceOver5" parent="VoiceOvers" index="4" instance=ExtResource( 4 )]
 position = Vector2( 7200, 3328 )
@@ -372,8 +379,8 @@ text = [ "Could the right way feel wrong?" ]
 audio_stream = [ ExtResource( 9 ) ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VoiceOvers/VoiceOver5" index="4"]
-position = Vector2( 256, -256 )
-shape = SubResource( 18 )
+position = Vector2( 256, -320 )
+shape = SubResource( 19 )
 
 [node name="VoiceOver6" parent="VoiceOvers" index="5" instance=ExtResource( 4 )]
 position = Vector2( 7008, -2912 )
@@ -382,7 +389,7 @@ audio_stream = [ ExtResource( 10 ) ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VoiceOvers/VoiceOver6" index="4"]
 position = Vector2( 416, 224 )
-shape = SubResource( 19 )
+shape = SubResource( 20 )
 
 [node name="VoiceOver7" parent="VoiceOvers" index="6" instance=ExtResource( 4 )]
 position = Vector2( 18208, -960 )
@@ -392,7 +399,7 @@ audio_stream = [ ExtResource( 11 ) ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VoiceOvers/VoiceOver7" index="4"]
 position = Vector2( -32, 64 )
-shape = SubResource( 20 )
+shape = SubResource( 21 )
 
 [node name="Enemies" parent="." index="7"]
 position = Vector2( -960, -832 )

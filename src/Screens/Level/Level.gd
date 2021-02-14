@@ -24,6 +24,7 @@ func _ready() -> void:
 
 	_smoke.visible = true
 	_player.position = _spawn.position
+	_player.visible = true
 	_player.connect("died", self, "player_respawn")
 	_player.set_goal(_goal)
 
