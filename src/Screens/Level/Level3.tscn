@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://Screens/Level/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Things/Wall/Wall.tscn" type="PackedScene" id=2]
@@ -19,6 +19,10 @@
 [ext_resource path="res://Things/VoiceOver/AudioLines/level3_04.wav" type="AudioStream" id=17]
 [ext_resource path="res://Things/VoiceOver/AudioLines/level3_08.wav" type="AudioStream" id=18]
 [ext_resource path="res://Things/VoiceOver/AudioLines/level3_09.wav" type="AudioStream" id=19]
+[ext_resource path="res://Things/VoiceOver/AudioLines/level3_07.wav" type="AudioStream" id=20]
+[ext_resource path="res://Things/Goal/goal3_mirror.png" type="Texture" id=21]
+[ext_resource path="res://Screens/Level/secret_badge.png" type="Texture" id=22]
+[ext_resource path="res://Screens/Level/secret_star.png" type="Texture" id=23]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 1056, -992, 960, -992, 768, -896, 544, -704, 512, -448, 544, -224, 736, 64, 928, 128, 1056, 128, 1056, 864, 672, 960, 672, 1152, 512, 1312, 512, 1696, 704, 1984, 992, 2016, 1248, 1920, 1440, 2080, 1568, 1760, 1760, 1632, 3072, 1632, 3072, 2112, 2720, 2272, 2496, 2784, 2592, 3264, 2976, 3584, 3616, 3584, 3968, 3360, 4032, 2848, 3840, 2432, 3680, 2144, 3616, 2080, 3616, 1632, 4544, 1632, 4608, 2016, 4736, 2240, 4640, 2432, 5024, 2592, 5280, 2784, 5472, 2784, 5472, 3360, 5600, 3616, 6112, 3712, 6720, 3712, 6752, 3968, 6976, 4000, 6976, 4224, 7424, 4032, 7680, 4288, 8064, 4128, 8320, 4096, 8352, 3808, 8416, 3264, 8416, 2944, 8160, 2912, 7968, 2720, 7936, 2368, 7968, 1984, 8576, 1888, 9120, 2016, 9888, 1984, 9504, 2240, 9440, 2816, 9664, 3296, 10208, 3648, 10880, 3520, 11328, 2944, 11232, 2144, 11040, 1472, 10432, 1248, 9856, 1248, 9472, 1312, 9280, 1248, 9216, 832, 9280, 512, 9536, 256, 10112, 160, 10336, 288, 11680, 256, 13344, 3904, 15744, 5728, 16096, 5536, 15904, 736, 15456, 416, 15808, -224, 14560, -224, 12288, -640, 11808, -320, 10720, -192, 9984, -448, 9472, -448, 9120, -320, 8832, 0, 8544, 128, 8576, 448, 8544, 1280, 8160, 1408, 6752, 1504, 6112, 1408, 5984, 1088, 5536, 1088, 5536, -32, 5984, -192, 6240, -576, 6240, -992, 6720, -1088, 7424, -992, 7552, -672, 7904, -640, 7872, -864, 8000, -1216, 8352, -1248, 8224, -1632, 8032, -1728, 8000, -2016, 16928, -2048, 16672, 6016, 8128, 6624, -224, 3808, -192, -1568, 1024, -1408 )
@@ -142,10 +146,20 @@ extents = Vector2( 448, 32 )
 [node name="Player" parent="." index="0"]
 visible = false
 
-[node name="Goal" parent="." index="1"]
-position = Vector2( 13664, 3424 )
+[node name="secret_star" type="Sprite" parent="." index="1"]
+position = Vector2( 9280, 2944 )
+texture = ExtResource( 23 )
 
-[node name="Smoke" parent="." index="2"]
+[node name="secret_badge" type="Sprite" parent="." index="2"]
+position = Vector2( 3936, -6240 )
+scale = Vector2( 1.65167, 1.65167 )
+texture = ExtResource( 22 )
+
+[node name="Goal" parent="." index="3"]
+position = Vector2( 13728, 3424 )
+texture = ExtResource( 21 )
+
+[node name="Smoke" parent="." index="4"]
 margin_left = -864.0
 margin_top = -7232.0
 margin_right = 15104.0
@@ -241,6 +255,9 @@ experience, give feedback or just say hi?
 Just contact me, I would love to hear from you.", "Bye bye now, have a great day!" ]
 audio_stream = [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 9 ) ]
 
+[node name="CollisionShape2D" parent="VoiceOvers/EndVoiceOver" index="4"]
+visible = false
+
 [node name="VoiceOver" parent="VoiceOvers" index="1" instance=ExtResource( 10 )]
 text = [ "Finally, here we will start the real healing process.
 No more fake love." ]
@@ -287,6 +304,9 @@ shape = SubResource( 36 )
 
 [node name="VoiceOver6" parent="VoiceOvers" index="6" instance=ExtResource( 10 )]
 position = Vector2( 11072, 640 )
+text = [ "We are almost there, can I feel it,
+they are gathering." ]
+audio_stream = [ ExtResource( 20 ) ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VoiceOvers/VoiceOver6" index="4"]
 position = Vector2( 320, 128 )
@@ -583,6 +603,7 @@ shape = SubResource( 18 )
 
 [node name="Spawn2" parent="Spawns" index="1" instance=ExtResource( 4 )]
 position = Vector2( 10912, 512 )
+is_current = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawns/Spawn2" index="0"]
 shape = SubResource( 19 )
@@ -673,6 +694,7 @@ shape = SubResource( 30 )
 
 [node name="Spawn16" parent="Spawns" index="16" instance=ExtResource( 4 )]
 position = Vector2( 6784, -6304 )
+is_current = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawns/Spawn16" index="0"]
 position = Vector2( 64, 160 )
