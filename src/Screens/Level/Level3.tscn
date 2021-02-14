@@ -1,26 +1,27 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Screens/Level/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Things/Wall/Wall.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Things/Enemy/Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Things/Spawn/Spawn.tscn" type="PackedScene" id=4]
 
 [sub_resource type="OccluderPolygon2D" id=1]
-polygon = PoolVector2Array( 1056, -992, 960, -992, 768, -896, 544, -704, 512, -448, 544, -224, 736, 64, 928, 128, 1056, 128, 1056, 864, 672, 960, 672, 1152, 512, 1312, 512, 1696, 704, 1984, 992, 2016, 1248, 1920, 1440, 2080, 1568, 1760, 1760, 1632, 3072, 1632, 3072, 2112, 2720, 2272, 2496, 2784, 2592, 3264, 2976, 3584, 3616, 3584, 3968, 3360, 4032, 2848, 3840, 2432, 3680, 2144, 3616, 2080, 3616, 1632, 4544, 1632, 4608, 2016, 4736, 2240, 4640, 2432, 5024, 2592, 5280, 2784, 5472, 2784, 5472, 3360, 5600, 3616, 6112, 3712, 6720, 3712, 6752, 3968, 6976, 4000, 6976, 4224, 7424, 4032, 7680, 4288, 8064, 4128, 8320, 4096, 8352, 3808, 8416, 3264, 8416, 2944, 8160, 2912, 7968, 2720, 7968, 1984, 9888, 1984, 9504, 2240, 9440, 2816, 9664, 3296, 10208, 3648, 10880, 3520, 11328, 2944, 11232, 2144, 11040, 1472, 10432, 1248, 9856, 1248, 9280, 1248, 9280, 512, 9536, 256, 11680, 256, 11968, 576, 11968, 5728, 15744, 5728, 16096, 5536, 16096, -640, 12288, -640, 11808, -320, 9120, -320, 8736, -32, 8544, 448, 8544, 1280, 8160, 1408, 6752, 1504, 6112, 1408, 5984, 1088, 5536, 1088, 5536, -32, 5984, -192, 6240, -576, 6240, -992, 7424, -992, 7552, -672, 7904, -640, 7872, -864, 8000, -1216, 8352, -1248, 8224, -1632, 8032, -1728, 8000, -2016, 16928, -2048, 16672, 6016, 8128, 6624, -224, 3808, -192, -1568, 1024, -1408 )
+polygon = PoolVector2Array( 1056, -992, 960, -992, 768, -896, 544, -704, 512, -448, 544, -224, 736, 64, 928, 128, 1056, 128, 1056, 864, 672, 960, 672, 1152, 512, 1312, 512, 1696, 704, 1984, 992, 2016, 1248, 1920, 1440, 2080, 1568, 1760, 1760, 1632, 3072, 1632, 3072, 2112, 2720, 2272, 2496, 2784, 2592, 3264, 2976, 3584, 3616, 3584, 3968, 3360, 4032, 2848, 3840, 2432, 3680, 2144, 3616, 2080, 3616, 1632, 4544, 1632, 4608, 2016, 4736, 2240, 4640, 2432, 5024, 2592, 5280, 2784, 5472, 2784, 5472, 3360, 5600, 3616, 6112, 3712, 6720, 3712, 6752, 3968, 6976, 4000, 6976, 4224, 7424, 4032, 7680, 4288, 8064, 4128, 8320, 4096, 8352, 3808, 8416, 3264, 8416, 2944, 8160, 2912, 7968, 2720, 7936, 2368, 7968, 1984, 8576, 1888, 9120, 2016, 9888, 1984, 9504, 2240, 9440, 2816, 9664, 3296, 10208, 3648, 10880, 3520, 11328, 2944, 11232, 2144, 11040, 1472, 10432, 1248, 9856, 1248, 9472, 1312, 9280, 1248, 9216, 832, 9280, 512, 9536, 256, 10112, 160, 10336, 288, 11680, 256, 13344, 3904, 15744, 5728, 16096, 5536, 15904, 736, 15456, 416, 15808, -224, 14560, -224, 12288, -640, 11808, -320, 10720, -192, 9984, -448, 9472, -448, 9120, -320, 8832, 0, 8544, 128, 8576, 448, 8544, 1280, 8160, 1408, 6752, 1504, 6112, 1408, 5984, 1088, 5536, 1088, 5536, -32, 5984, -192, 6240, -576, 6240, -992, 6720, -1088, 7424, -992, 7552, -672, 7904, -640, 7872, -864, 8000, -1216, 8352, -1248, 8224, -1632, 8032, -1728, 8000, -2016, 16928, -2048, 16672, 6016, 8128, 6624, -224, 3808, -192, -1568, 1024, -1408 )
 
 [sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( 0, -288, -224, -160, -224, 128, -64, 256, 224, 224, 352, -32, 256, -224 )
 
 [sub_resource type="OccluderPolygon2D" id=3]
-polygon = PoolVector2Array( 384, 352, 416, 864, 608, 896, 1248, 896, 1536, 544, 1632, 224, 1824, 256, 1984, 224, 1984, -320, 1824, -448, 766.227, -448, 608, -256, 608, 32 )
+polygon = PoolVector2Array( 384, 352, 416, 864, 608, 896, 1248, 896, 1536, 544, 1632, 224, 1824, 256, 1984, 224, 1920, -64, 1984, -320, 1824, -448, 766.227, -448, 608, -256, 608, 32 )
 
 [sub_resource type="OccluderPolygon2D" id=4]
 polygon = PoolVector2Array( 160, -128, 992, -128, 992, -512, 768, -544, 704, -640, 736, -1056, 160, -1056 )
 
 [sub_resource type="OccluderPolygon2D" id=5]
-polygon = PoolVector2Array( -2816, -704, -2816, -1024, -2560, -1440, -2016, -1760, -1824, -1888, -1513.65, -1866.22, -1408, -1760, 0, -1760, 64, -1472, 224, -1248, 512, -1216, 544, -864, 512, -128, 192, -96, -64, 160, -192, 640, -160, 1024, 224, 1472, 448, 1632, 448, 2688, 288, 2688, 192, 2816, 32, 2784, -2592, 2880, -2656, 2656, -2784, 2656, -2880, 2496, -2976, 2464, -2976, 1728, -1312, 1728, -1024, 1632, -832, 1376, -800, 1056, -864, 800, -1088, 608, -1344, 576, -1536, 576, -1536, 192, -1248, 96, -960, -96, -960, -672, -800, -1248, -1088, -1152, -2304, -1248, -2176, -960, -2272, -704 )
+polygon = PoolVector2Array( -2816, -704, -2816, -1024, -2560, -1440, -2016, -1760, -1824, -1888, -1513.65, -1866.22, -1408, -1760, -416, -1824, 0, -1760, 64, -1472, 224, -1248, 512, -1216, 544, -864, 512, -128, 192, -96, -64, 160, -192, 640, -160, 1024, 224, 1472, 448, 1632, 448, 2688, 288, 2688, 192, 2816, 32, 2784, -2592, 2880, -2656, 2656, -2784, 2656, -2880, 2496, -2976, 2464, -2976, 1728, -1312, 1728, -1024, 1632, -832, 1376, -800, 1056, -864, 800, -1088, 608, -1344, 576, -1536, 576, -1536, 192, -1248, 96, -960, -96, -960, -672, -800, -1248, -1088, -1152, -2304, -1248, -2176, -960, -2272, -704 )
 
 [sub_resource type="OccluderPolygon2D" id=6]
-polygon = PoolVector2Array( 224, 3072, 288, 1568, 832, 992, 1216, 896, 1472, 576, 2400, 576, 2400, 704, 2720, 736, 2816, 576, 3552, 576, 3648, 224, 4000, 288, 4352, 128, 5056, 192, 5056, 736, 5248, 1248, 4640, 1664, 4704, 2208, 4608, 2208, 4640, 2688, 5120, 2688, 5440, 2912, 6592, 2912, 6656, 2752, 6816, 2720, 6752, 1632, 6336, 1568, 5984, 1216, 5952, 672, 6080, 128, 6464, -224, 6464, -960, 6080, -1152, 6432, -1728, 7008, -1952, 7008, -2144, 6016, -1952, 5120, -1984, 4992, -1696, 4544, -1344, 3456, -1472, 3328, -2176, -224, 1408, 0, 3136 )
+polygon = PoolVector2Array( 224, 3072, 288, 1568, 832, 992, 1216, 896, 1472, 576, 2400, 576, 2400, 704, 2720, 736, 2816, 576, 3232, 544, 3552, 576, 3648, 224, 4000, 288, 4352, 128, 5056, 192, 5056, 736, 5248, 1248, 4640, 1664, 4704, 2208, 4608, 2208, 4640, 2688, 5120, 2688, 5440, 2912, 5984, 2880, 6112, 2816, 6592, 2912, 6656, 2752, 6816, 2720, 6752, 1632, 6336, 1568, 5984, 1216, 5952, 672, 6080, 128, 6464, -224, 6464, -960, 6080, -1152, 6432, -1728, 7008, -1952, 7008, -2144, 6016, -1952, 5120, -1984, 4992, -1696, 4544, -1344, 3456, -1472, 3328, -2176, -224, 1408, 0, 3136 )
 
 [sub_resource type="OccluderPolygon2D" id=7]
 polygon = PoolVector2Array( 736, 256, 704, -384, 1120, -672, 1600, -768, 2304, -672, 2592, -352, 2656, -128, 3488, -128, 4256, -416, 5024, -256, 4736, 224, 4800, 384, 5440, 256, 5504, 736, 5216, 1216, 4640, 1536, 4672, 2112, 5056, 2464, 5152, 2944, 5184, 3296, 4928, 3680, 4576, 4032, 4608, 4896, 4832, 4928, 7552, 2816, 6048, -1728, -256, -1248, 640, 416 )
@@ -46,13 +47,70 @@ polygon = PoolVector2Array( -64, 160, 704, 192, 672, 32, 384, -128 )
 [sub_resource type="OccluderPolygon2D" id=14]
 polygon = PoolVector2Array( -64, -96, 160, -64, 480, -96, 576, 96, 160, 160, -96, 160, -160, -64 )
 
+[sub_resource type="OccluderPolygon2D" id=25]
+polygon = PoolVector2Array( 64, 0, 416, -160, 448, -256, 736, 0, 1024, 128, 1024, 576, 992, 960, 672, 1088, 448, 1248, 160, 992, 0, 768, 128, 544, 160, 320, 320, 224, 480, 192, 512, 352, 704, 448, 544, 512, 416, 608, 448, 672, 640, 608, 800, 480, 480, 64, 32, 224, -128, 480, -96, 768, 0, 1056, 160, 1216, 384, 1344, 768, 1248, 1088, 992, 1184, 576, 1152, 128, 896, -128, 512, -352, 96, -160, -128, 32 )
+
+[sub_resource type="OccluderPolygon2D" id=26]
+polygon = PoolVector2Array( -160, -96, -256, -384, -96, -608, 160, -768, 544, -576, 1216, -544, 1408, -320, 1280, -96, 1056, -352, 480, -384, 128, -480, 32, -160, -96, 128, -192, 128 )
+
+[sub_resource type="OccluderPolygon2D" id=27]
+polygon = PoolVector2Array( 0, 0, 1472, 2080, 1632, 3328, 3040, 3712, 4832, 3264, 5056, 1696, 4640, 768, 3552, 416, 2304, 544, 288, -1504, 5408, -1632, 6336, 1920, 4672, 3840, 1472, 4544 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 160, 448 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 128, 352 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 416, 64 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 96, 288 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 352, 32 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 32, 352 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 384, 32 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 32, 224 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 224, 32 )
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 256, 32 )
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 32, 224 )
+
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 32, 288 )
+
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 352, 32 )
+
+[sub_resource type="RectangleShape2D" id=31]
+extents = Vector2( 448, 32 )
+
 [node name="Level3" instance=ExtResource( 1 )]
 
 [node name="Player" parent="." index="0"]
 visible = false
 
 [node name="Goal" parent="." index="1"]
-position = Vector2( 13472, 5632 )
+position = Vector2( 13664, 3424 )
+
+[node name="Smoke" parent="." index="2"]
+margin_left = -864.0
+margin_top = -7232.0
+margin_right = 15104.0
+margin_bottom = 4864.0
 
 [node name="Wall" parent="Wals" index="0" instance=ExtResource( 2 )]
 position = Vector2( -1056, 512 )
@@ -121,6 +179,21 @@ occluder = SubResource( 13 )
 [node name="Wall17" parent="Wals" index="16" instance=ExtResource( 2 )]
 position = Vector2( 6336, 3968 )
 occluder = SubResource( 14 )
+
+[node name="Wall18" parent="Wals" index="17" instance=ExtResource( 2 )]
+position = Vector2( 8768, 2496 )
+occluder = SubResource( 25 )
+
+[node name="Wall20" parent="Wals" index="18" instance=ExtResource( 2 )]
+position = Vector2( 13920, 5504 )
+occluder = SubResource( 26 )
+
+[node name="Wall19" parent="Wals" index="19" instance=ExtResource( 2 )]
+position = Vector2( 10880, 1152 )
+occluder = SubResource( 27 )
+
+[node name="EndVoiceOver" parent="VoiceOvers" index="0"]
+position = Vector2( 13568, 3392 )
 
 [node name="Enemy" parent="Enemies" index="0" instance=ExtResource( 3 )]
 position = Vector2( 1536, -1280 )
@@ -241,3 +314,257 @@ position = Vector2( 6048, 4000 )
 
 [node name="Enemy40" parent="Enemies" index="39" instance=ExtResource( 3 )]
 position = Vector2( 7008, 4000 )
+
+[node name="Enemy41" parent="Enemies" index="40" instance=ExtResource( 3 )]
+position = Vector2( 5120, 2208 )
+
+[node name="Enemy42" parent="Enemies" index="41" instance=ExtResource( 3 )]
+position = Vector2( 8768, 1920 )
+
+[node name="Enemy43" parent="Enemies" index="42" instance=ExtResource( 3 )]
+position = Vector2( 8672, 2304 )
+
+[node name="Enemy44" parent="Enemies" index="43" instance=ExtResource( 3 )]
+position = Vector2( 9216, 3520 )
+
+[node name="Enemy45" parent="Enemies" index="44" instance=ExtResource( 3 )]
+position = Vector2( 10976, 960 )
+
+[node name="Enemy46" parent="Enemies" index="45" instance=ExtResource( 3 )]
+position = Vector2( 11104, 1184 )
+
+[node name="Enemy47" parent="Enemies" index="46" instance=ExtResource( 3 )]
+position = Vector2( 11232, 1472 )
+
+[node name="Enemy48" parent="Enemies" index="47" instance=ExtResource( 3 )]
+position = Vector2( 11456, 1760 )
+
+[node name="Enemy49" parent="Enemies" index="48" instance=ExtResource( 3 )]
+position = Vector2( 11648, 2016 )
+
+[node name="Enemy50" parent="Enemies" index="49" instance=ExtResource( 3 )]
+position = Vector2( 11776, 2208 )
+
+[node name="Enemy51" parent="Enemies" index="50" instance=ExtResource( 3 )]
+position = Vector2( 11936, 2400 )
+
+[node name="Enemy52" parent="Enemies" index="51" instance=ExtResource( 3 )]
+position = Vector2( 12160, 2752 )
+
+[node name="Enemy53" parent="Enemies" index="52" instance=ExtResource( 3 )]
+position = Vector2( 12320, 3008 )
+
+[node name="Enemy54" parent="Enemies" index="53" instance=ExtResource( 3 )]
+position = Vector2( 12448, 3232 )
+
+[node name="Enemy55" parent="Enemies" index="54" instance=ExtResource( 3 )]
+position = Vector2( 12640, 3392 )
+
+[node name="Enemy56" parent="Enemies" index="55" instance=ExtResource( 3 )]
+position = Vector2( 12768, 3584 )
+
+[node name="Enemy57" parent="Enemies" index="56" instance=ExtResource( 3 )]
+position = Vector2( 12864, 3744 )
+
+[node name="Enemy58" parent="Enemies" index="57" instance=ExtResource( 3 )]
+position = Vector2( 12992, 3904 )
+
+[node name="Enemy59" parent="Enemies" index="58" instance=ExtResource( 3 )]
+position = Vector2( 13184, 4096 )
+
+[node name="Enemy60" parent="Enemies" index="59" instance=ExtResource( 3 )]
+position = Vector2( 13440, 4224 )
+
+[node name="Enemy61" parent="Enemies" index="60" instance=ExtResource( 3 )]
+position = Vector2( 13856, 4256 )
+
+[node name="Enemy62" parent="Enemies" index="61" instance=ExtResource( 3 )]
+position = Vector2( 14240, 4160 )
+
+[node name="Enemy63" parent="Enemies" index="62" instance=ExtResource( 3 )]
+position = Vector2( 14496, 3808 )
+
+[node name="Enemy64" parent="Enemies" index="63" instance=ExtResource( 3 )]
+position = Vector2( 14528, 3392 )
+
+[node name="Enemy65" parent="Enemies" index="64" instance=ExtResource( 3 )]
+position = Vector2( 14496, 3008 )
+
+[node name="Enemy66" parent="Enemies" index="65" instance=ExtResource( 3 )]
+position = Vector2( 14240, 2816 )
+
+[node name="Enemy67" parent="Enemies" index="66" instance=ExtResource( 3 )]
+position = Vector2( 13760, 2656 )
+
+[node name="Enemy68" parent="Enemies" index="67" instance=ExtResource( 3 )]
+position = Vector2( 13504, 2624 )
+
+[node name="Enemy69" parent="Enemies" index="68" instance=ExtResource( 3 )]
+position = Vector2( 13216, 2368 )
+
+[node name="Enemy70" parent="Enemies" index="69" instance=ExtResource( 3 )]
+position = Vector2( 13024, 2208 )
+
+[node name="Enemy71" parent="Enemies" index="70" instance=ExtResource( 3 )]
+position = Vector2( 12864, 1952 )
+
+[node name="Enemy72" parent="Enemies" index="71" instance=ExtResource( 3 )]
+position = Vector2( 12672, 1728 )
+
+[node name="Enemy73" parent="Enemies" index="72" instance=ExtResource( 3 )]
+position = Vector2( 12480, 1536 )
+
+[node name="Enemy74" parent="Enemies" index="73" instance=ExtResource( 3 )]
+position = Vector2( 12320, 1344 )
+
+[node name="Enemy75" parent="Enemies" index="74" instance=ExtResource( 3 )]
+position = Vector2( 12160, 1152 )
+
+[node name="Enemy76" parent="Enemies" index="75" instance=ExtResource( 3 )]
+position = Vector2( 12000, 992 )
+
+[node name="Enemy77" parent="Enemies" index="76" instance=ExtResource( 3 )]
+position = Vector2( 11840, 800 )
+
+[node name="Enemy78" parent="Enemies" index="77" instance=ExtResource( 3 )]
+position = Vector2( 11584, 608 )
+
+[node name="Enemy79" parent="Enemies" index="78" instance=ExtResource( 3 )]
+position = Vector2( 11424, 448 )
+
+[node name="Enemy80" parent="Enemies" index="79" instance=ExtResource( 3 )]
+position = Vector2( 13632, 4256 )
+
+[node name="Enemy81" parent="Enemies" index="80" instance=ExtResource( 3 )]
+position = Vector2( 14016, 2720 )
+
+[node name="Enemy82" parent="Enemies" index="81" instance=ExtResource( 3 )]
+position = Vector2( 13344, 2496 )
+
+[node name="Enemy83" parent="Enemies" index="82" instance=ExtResource( 3 )]
+position = Vector2( 12032, 2592 )
+
+[node name="Enemy84" parent="Enemies" index="83" instance=ExtResource( 3 )]
+position = Vector2( 11136, 1344 )
+
+[node name="Enemy85" parent="Enemies" index="84" instance=ExtResource( 3 )]
+position = Vector2( 14048, 4224 )
+
+[node name="Enemy86" parent="Enemies" index="85" instance=ExtResource( 3 )]
+position = Vector2( 14400, 4000 )
+
+[node name="Enemy87" parent="Enemies" index="86" instance=ExtResource( 3 )]
+position = Vector2( 14528, 3584 )
+
+[node name="Enemy88" parent="Enemies" index="87" instance=ExtResource( 3 )]
+position = Vector2( 14528, 3200 )
+
+[node name="Spawn" parent="Spawns" index="0" instance=ExtResource( 4 )]
+position = Vector2( 8288, 2144 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawns/Spawn" index="0"]
+shape = SubResource( 15 )
+
+[node name="Spawn2" parent="Spawns" index="1" instance=ExtResource( 4 )]
+position = Vector2( 10912, 512 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawns/Spawn2" index="0"]
+shape = SubResource( 16 )
+
+[node name="Spawn3" parent="Spawns" index="2" instance=ExtResource( 4 )]
+position = Vector2( 6624, 2944 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawns/Spawn3" index="0"]
+shape = SubResource( 17 )
+
+[node name="Spawn4" parent="Spawns" index="3" instance=ExtResource( 4 )]
+position = Vector2( 5504, 4032 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawns/Spawn4" index="0"]
+shape = SubResource( 18 )
+
+[node name="Spawn5" parent="Spawns" index="4" instance=ExtResource( 4 )]
+position = Vector2( 2304, 2528 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawns/Spawn5" index="0"]
+shape = SubResource( 19 )
+
+[node name="Spawn6" parent="Spawns" index="5" instance=ExtResource( 4 )]
+position = Vector2( 3296, 1984 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawns/Spawn6" index="0"]
+shape = SubResource( 20 )
+
+[node name="Spawn7" parent="Spawns" index="6" instance=ExtResource( 4 )]
+position = Vector2( 3968, 2656 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawns/Spawn7" index="0"]
+shape = SubResource( 21 )
+
+[node name="Spawn8" parent="Spawns" index="7" instance=ExtResource( 4 )]
+position = Vector2( 800, 1984 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawns/Spawn8" index="0"]
+shape = SubResource( 22 )
+
+[node name="Spawn9" parent="Spawns" index="8" instance=ExtResource( 4 )]
+position = Vector2( 160, 1280 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawns/Spawn9" index="0"]
+shape = SubResource( 23 )
+
+[node name="Spawn10" parent="Spawns" index="9" instance=ExtResource( 4 )]
+position = Vector2( 1536, -736 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawns/Spawn10" index="0"]
+shape = SubResource( 24 )
+
+[node name="Spawn11" parent="Spawns" index="10" instance=ExtResource( 4 )]
+position = Vector2( 864, -1632 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawns/Spawn11" index="0"]
+shape = SubResource( 28 )
+
+[node name="Spawn12" parent="Spawns" index="11" instance=ExtResource( 4 )]
+position = Vector2( 3104, -3168 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawns/Spawn12" index="0"]
+shape = SubResource( 29 )
+
+[node name="Spawn13" parent="Spawns" index="12" instance=ExtResource( 4 )]
+position = Vector2( 4096, -2144 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawns/Spawn13" index="0"]
+shape = SubResource( 30 )
+
+[node name="Spawn14" parent="Spawns" index="13" instance=ExtResource( 4 )]
+position = Vector2( 4128, -1408 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawns/Spawn14" index="0"]
+shape = SubResource( 30 )
+
+[node name="Spawn17" parent="Spawns" index="14" instance=ExtResource( 4 )]
+position = Vector2( 4128, 640 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawns/Spawn17" index="0"]
+shape = SubResource( 30 )
+
+[node name="Spawn15" parent="Spawns" index="15" instance=ExtResource( 4 )]
+position = Vector2( 6752, -2208 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawns/Spawn15" index="0"]
+shape = SubResource( 30 )
+
+[node name="Spawn16" parent="Spawns" index="16" instance=ExtResource( 4 )]
+position = Vector2( 6784, -6304 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawns/Spawn16" index="0"]
+position = Vector2( 64, 160 )
+shape = SubResource( 31 )
+
+[node name="Spawn18" parent="Spawns" index="17" instance=ExtResource( 4 )]
+position = Vector2( 6528, -4960 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawns/Spawn18" index="0"]
+position = Vector2( 64, 160 )
+shape = SubResource( 31 )
