@@ -25,7 +25,7 @@ func go_to_position(new_position: Vector2) -> void:
 	_tween.interpolate_property(self, "position", position, new_position, time, Tween.TRANS_SINE, Tween.EASE_OUT)
 	_tween.start()
 
-	yield(_tween, "tween_all_completed")
+	yield(_tween, "tween_completed")
 
 	_tween.interpolate_property(_visual, "scale", _visual.scale, Vector2.ONE, .4, Tween.TRANS_BOUNCE, Tween.EASE_OUT)
 	_tween.start()

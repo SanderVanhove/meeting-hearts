@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/oh_hey_welcome.wav-5f8edfd7470cfa19242b4532929f448b.sample"
+
+[deps]
+
+source_file="res://Things/VoiceOver/AudioLines/oh_hey_welcome.wav"
+dest_files=[ "res://.import/oh_hey_welcome.wav-5f8edfd7470cfa19242b4532929f448b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

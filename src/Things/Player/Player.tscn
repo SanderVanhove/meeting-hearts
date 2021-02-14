@@ -7,10 +7,14 @@
 [ext_resource path="res://Things/Player/heartbeat_2.wav" type="AudioStream" id=5]
 [ext_resource path="res://Things/Player/highlight.png" type="Texture" id=6]
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=[
+"player",
+]]
+collision_mask = 3
 script = ExtResource( 2 )
 
 [node name="Light" type="Light2D" parent="."]
+visible = false
 position = Vector2( 0, 2.99658 )
 scale = Vector2( 1.45869, 1.11251 )
 texture = ExtResource( 3 )

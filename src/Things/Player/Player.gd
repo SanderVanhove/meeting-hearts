@@ -10,9 +10,14 @@ onready var _beat2_timer: Timer = $Audio/Beat2Timer
 onready var _callout_timer: Timer = $Audio/CalloutTimer
 onready var _tween: Tween = $Tween
 onready var _visual: Node2D = $Visual
+onready var _light: Light2D = $Light
 
 var _motion: Vector2 = Vector2.ZERO
 var _direction: Vector2 = Vector2.ZERO
+
+
+func _ready() -> void:
+	_light.visible = true
 
 
 func _input(event: InputEvent) -> void:
@@ -93,7 +98,7 @@ func spawn_noise_ring(radius: float = 200) -> void:
 
 	yield(_tween, "tween_all_completed")
 
-	remove_child(ring)
+	ring.queue_free()
 
 
 func _on_Beat1Timer_timeout() -> void:
