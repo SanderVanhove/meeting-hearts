@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Screens/Level/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Things/Wall/Wall.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Things/VoiceOver/AudioLines/level1_06.wav" type="AudioStream" id=9]
 [ext_resource path="res://Things/VoiceOver/AudioLines/level1_07.wav" type="AudioStream" id=10]
 [ext_resource path="res://Things/VoiceOver/AudioLines/level1_08.wav" type="AudioStream" id=11]
+[ext_resource path="res://Things/Goal/goal1_perfume.png" type="Texture" id=12]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 960, 96, 5568, 96, 5568, -352, -224, -352, -224, 1696, 5568, 1696, 5568, 1120, 928, 1120, 480, 1056, 256, 864, 192, 576, 288, 288, 576, 96 )
@@ -80,6 +81,7 @@ position = Vector2( 24992, -3744 )
 
 [node name="Goal" parent="." index="1"]
 position = Vector2( 17024, 1408 )
+texture = ExtResource( 12 )
 
 [node name="pexels-chevanon-photography-1108099" type="Sprite" parent="." index="2"]
 position = Vector2( 18272, -928 )

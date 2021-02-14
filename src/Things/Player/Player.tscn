@@ -22,7 +22,6 @@ collision_mask = 3
 script = ExtResource( 2 )
 
 [node name="Light" type="Light2D" parent="."]
-visible = false
 position = Vector2( 0, 2.99658 )
 scale = Vector2( 1.45869, 1.11251 )
 texture = ExtResource( 3 )

@@ -1,6 +1,5 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Things/VoiceOver/VoiceOver.gd" type="Script" id=1]
 [ext_resource path="res://Things/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Things/VoiceOver/AudioLines/level1_05.wav" type="AudioStream" id=3]
 [ext_resource path="res://Util/Shaders/Smoke.tscn" type="PackedScene" id=4]
@@ -9,7 +8,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=8]
 [ext_resource path="res://Things/Goal/Goal.tscn" type="PackedScene" id=9]
 
-[sub_resource type="RectangleShape2D" id=21]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 416, 384 )
 
 [node name="Level" type="Node2D"]
@@ -35,21 +34,17 @@ margin_bottom = 3729.0
 
 [node name="VoiceOvers" type="Node2D" parent="."]
 
-[node name="EndVoiceOver" type="Area2D" parent="VoiceOvers" instance=ExtResource( 6 )]
+[node name="EndVoiceOver" parent="VoiceOvers" instance=ExtResource( 6 )]
 position = Vector2( 16928, 1408 )
-collision_layer = 2
-collision_mask = 2
-script = ExtResource( 1 )
 text = [ "Hmm, perfume, they never sell perfume, they only sell love.
 The thing is though, you can't buy love." ]
 audio_stream = [ ExtResource( 3 ) ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VoiceOvers/EndVoiceOver"]
 position = Vector2( 96, 0 )
-shape = SubResource( 21 )
+shape = SubResource( 1 )
 
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Tween" type="Tween" parent="."]
-[connection signal="body_entered" from="VoiceOvers/EndVoiceOver" to="VoiceOvers/EndVoiceOver" method="_on_VoiceOver_body_entered"]
 [connection signal="done" from="VoiceOvers/EndVoiceOver" to="." method="_on_EndVoiceOver_done"]
