@@ -15,7 +15,7 @@ polygon = PoolVector2Array( 112, 176, 1440, 120, 2200, 1344, 3120, 1400, 3048, 2
 polygon = PoolVector2Array( 152, -184, 1152, -176, 1160, 264, -288, 184 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 543.058, 486.49 )
+extents = Vector2( 728.515, 271.426 )
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 5 )
@@ -49,5 +49,5 @@ text = "Oh hey, welcome!"
 audio_stream = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VoiceOver"]
-position = Vector2( 107.48, 31.1128 )
+position = Vector2( 396.131, -18.7778 )
 shape = SubResource( 3 )

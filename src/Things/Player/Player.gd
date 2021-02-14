@@ -11,6 +11,7 @@ onready var _callout_timer: Timer = $Audio/CalloutTimer
 onready var _tween: Tween = $Tween
 onready var _visual: Node2D = $Visual
 onready var _light: Light2D = $Light
+onready var _joystick = $Joystick
 
 var _motion: Vector2 = Vector2.ZERO
 var _direction: Vector2 = Vector2.ZERO
@@ -33,6 +34,9 @@ func _input(event: InputEvent) -> void:
 		direction.y += 1
 
 	_direction = direction.normalized()
+
+	if _joystick.visible:
+		_direction = _joystick.output
 
 	if event.is_action_pressed("call"):
 		do_callout()
@@ -91,8 +95,8 @@ func spawn_noise_ring(radius: float = 200) -> void:
 	_tween.interpolate_property(ring, "opacity", 1, 0, time, Tween.TRANS_SINE, Tween.EASE_OUT)
 	_tween.interpolate_property(ring, "width", 10, 0, time, Tween.TRANS_SINE, Tween.EASE_OUT)
 
-	_tween.interpolate_property(_visual, "scale", _visual.scale, Vector2(.8, .8), .1)
-	_tween.interpolate_property(_visual, "scale", Vector2(.8, .8), _visual.scale, .2, Tween.TRANS_SINE, Tween.EASE_OUT, .1)
+	_tween.interpolate_property(_visual, "scale", _visual.scale, Vector2(.7, .7), .1)
+	_tween.interpolate_property(_visual, "scale", Vector2(.7, .7), _visual.scale, .2, Tween.TRANS_SINE, Tween.EASE_OUT, .1)
 
 	_tween.start()
 
@@ -113,3 +117,7 @@ func _on_Beat2Timer_timeout() -> void:
 	_beat1_timer.start()
 
 	spawn_noise_ring()
+
+
+func _on_Button_pressed() -> void:
+	do_callout()
