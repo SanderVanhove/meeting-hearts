@@ -1,0 +1,396 @@
+[gd_scene load_steps=32 format=2]
+
+[ext_resource path="res://Screens/Level/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Things/Wall/Wall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Screens/Level/pexels-chevanon-photography-1108099.jpg" type="Texture" id=3]
+[ext_resource path="res://Things/VoiceOver/VoiceOver.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Things/VoiceOver/AudioLines/level1_01.wav" type="AudioStream" id=5]
+[ext_resource path="res://Things/VoiceOver/AudioLines/level1_02.wav" type="AudioStream" id=6]
+[ext_resource path="res://Things/VoiceOver/AudioLines/level1_03.wav" type="AudioStream" id=7]
+[ext_resource path="res://Things/VoiceOver/AudioLines/level1_04.wav" type="AudioStream" id=8]
+[ext_resource path="res://Things/VoiceOver/AudioLines/level1_06.wav" type="AudioStream" id=9]
+[ext_resource path="res://Things/VoiceOver/AudioLines/level1_07.wav" type="AudioStream" id=10]
+[ext_resource path="res://Things/VoiceOver/AudioLines/level1_08.wav" type="AudioStream" id=11]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( 960, 96, 5568, 96, 5568, -352, -224, -352, -224, 1696, 5568, 1696, 5568, 1120, 928, 1120, 480, 1056, 256, 864, 192, 576, 288, 288, 576, 96 )
+
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( 5184, -352, 5184, 416, 3648, 416, 3392, 32, 2560, 32, 2304, 416, 2304, 928, 2528, 1280, 3392, 1280, 3648, 1024, 5728, 1024, 5728, -928, 6208, -928, 6208, 1440, 2112, 1440, 2112, -352 )
+
+[sub_resource type="OccluderPolygon2D" id=3]
+polygon = PoolVector2Array( -1152, -480, -1152, -672, 128, -672, 128, 1120, -384, 1376, -384, 2144, 128, 2400, 640, 2400, 1152, 2144, 3712, 1888, 3712, -672, 3968, -672, 3968, 2656, -1152, 2656 )
+
+[sub_resource type="OccluderPolygon2D" id=4]
+polygon = PoolVector2Array( 1760, 1248, 3040, 1248, 3040, -800, 2592, -896, 2272, -1312, 1248, -1312, 1248, 480, 1504, 480, 1760, 736 )
+
+[sub_resource type="OccluderPolygon2D" id=5]
+polygon = PoolVector2Array( 2080, 704, 2080, -1632, 3616, -1632, 3872, -2144, 4352, -2240, 4896, -2240, 5280, -2080, 5408, -1632, 7968, -1632, 7968, 1312, 8224, 1312, 8224, -2400, 1824, -2400, 1824, 704 )
+
+[sub_resource type="OccluderPolygon2D" id=6]
+polygon = PoolVector2Array( 0, 0, 0, 352, 512, 352, 512, -32 )
+
+[sub_resource type="OccluderPolygon2D" id=7]
+polygon = PoolVector2Array( 288, -256, 288, -64, 544, -64, 544, -256 )
+
+[sub_resource type="OccluderPolygon2D" id=8]
+polygon = PoolVector2Array( 32, -1088, 32, 3296, 384, 3424, 544, 3776, 2592, 3584, 2592, 1760, 2080, 1440, 2048, 768, 2592, 448, 2592, -1312, 2336, -1568, 544, -1568, 416, -1184 )
+
+[sub_resource type="OccluderPolygon2D" id=9]
+polygon = PoolVector2Array( -2688, -992, -2144, -1088, 1120, -1088, 2304, -1632, 3968, -2080, 5024, -2080, 5024, 1984, -2144, 1984, -2144, -64, -2656, -320, -2688, 2624, 5248, 2208, 5152, -2272, 1088, -2272, -2688, -1120 )
+
+[sub_resource type="OccluderPolygon2D" id=10]
+polygon = PoolVector2Array( 3584, 224, 3584, -1824, 1280, -1824, 1280, 224, 2048, 224, 2048, -1312, 2816, -1312, 2816, 224 )
+
+[sub_resource type="OccluderPolygon2D" id=11]
+polygon = PoolVector2Array( -1024, -896, -1024, -640, -768, -640, -768, -896 )
+
+[sub_resource type="OccluderPolygon2D" id=12]
+polygon = PoolVector2Array( -224, -128, 1632, -736, 1920, -736, 1952, -544, 2144, -416, 2464, -416, 2464, 1408, 2272, 1408, -480, 128 )
+
+[sub_resource type="OccluderPolygon2D" id=13]
+polygon = PoolVector2Array( -1536, -384, 1440, -512, 1728, 32, 672, -256, 672, 0, 160, 0, -96, -256, -864, -256, -864, 0, -1120, 0, -1120, -256, -1632, -256 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 352, 512 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 640, 640 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 640, 672 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 640, 576 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 640, 864 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 1024, 672 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 512, 352 )
+
+[node name="Level1" instance=ExtResource( 1 )]
+next_level = "res://Screens/Level/Level2.tscn"
+
+[node name="Player" parent="." index="0"]
+position = Vector2( 24992, -3744 )
+
+[node name="Goal" parent="." index="1"]
+position = Vector2( 17024, 1408 )
+
+[node name="pexels-chevanon-photography-1108099" type="Sprite" parent="." index="2"]
+position = Vector2( 18272, -928 )
+scale = Vector2( 0.106482, 0.106482 )
+texture = ExtResource( 3 )
+
+[node name="Smoke" parent="." index="3"]
+margin_left = -576.0
+margin_top = -3744.0
+margin_right = 18816.0
+margin_bottom = 3712.0
+
+[node name="Spawn" parent="." index="4"]
+position = Vector2( 0, 160 )
+
+[node name="Wall" parent="Wals" index="0" instance=ExtResource( 2 )]
+position = Vector2( -704, -416 )
+occluder = SubResource( 1 )
+
+[node name="Wall2" parent="Wals" index="1" instance=ExtResource( 2 )]
+position = Vector2( -320, 1632 )
+occluder = SubResource( 2 )
+
+[node name="Wall3" parent="Wals" index="2" instance=ExtResource( 2 )]
+position = Vector2( 7040, 1184 )
+occluder = SubResource( 3 )
+
+[node name="Wall4" parent="Wals" index="3" instance=ExtResource( 2 )]
+position = Vector2( 4128, -1248 )
+occluder = SubResource( 4 )
+
+[node name="Wall5" parent="Wals" index="4" instance=ExtResource( 2 )]
+position = Vector2( 2784, -1440 )
+occluder = SubResource( 5 )
+
+[node name="Wall6" parent="Wals" index="5" instance=ExtResource( 2 )]
+position = Vector2( 896, -480 )
+occluder = SubResource( 6 )
+
+[node name="Wall7" parent="Wals" index="6" instance=ExtResource( 2 )]
+position = Vector2( 2304, 384 )
+occluder = SubResource( 7 )
+
+[node name="Wall57" parent="Wals" index="7" instance=ExtResource( 2 )]
+position = Vector2( 3040, 384 )
+occluder = SubResource( 7 )
+
+[node name="Wall8" parent="Wals" index="8" instance=ExtResource( 2 )]
+position = Vector2( 7648, -992 )
+occluder = SubResource( 8 )
+
+[node name="Wall9" parent="Wals" index="9" instance=ExtResource( 2 )]
+position = Vector2( 13664, 832 )
+occluder = SubResource( 9 )
+
+[node name="Wall10" parent="Wals" index="10" instance=ExtResource( 2 )]
+position = Vector2( 14592, 2336 )
+occluder = SubResource( 10 )
+
+[node name="Wall11" parent="Wals" index="11" instance=ExtResource( 2 )]
+position = Vector2( 13056, 1664 )
+occluder = SubResource( 11 )
+
+[node name="Wall12" parent="Wals" index="12" instance=ExtResource( 2 )]
+position = Vector2( 13056, 2176 )
+occluder = SubResource( 11 )
+
+[node name="Wall13" parent="Wals" index="13" instance=ExtResource( 2 )]
+position = Vector2( 13568, 1664 )
+occluder = SubResource( 11 )
+
+[node name="Wall14" parent="Wals" index="14" instance=ExtResource( 2 )]
+position = Vector2( 13568, 2176 )
+occluder = SubResource( 11 )
+
+[node name="Wall15" parent="Wals" index="15" instance=ExtResource( 2 )]
+position = Vector2( 14080, 1664 )
+occluder = SubResource( 11 )
+
+[node name="Wall16" parent="Wals" index="16" instance=ExtResource( 2 )]
+position = Vector2( 14080, 2176 )
+occluder = SubResource( 11 )
+
+[node name="Wall17" parent="Wals" index="17" instance=ExtResource( 2 )]
+position = Vector2( 14592, 2176 )
+occluder = SubResource( 11 )
+
+[node name="Wall18" parent="Wals" index="18" instance=ExtResource( 2 )]
+position = Vector2( 14848, 1664 )
+occluder = SubResource( 11 )
+
+[node name="Wall19" parent="Wals" index="19" instance=ExtResource( 2 )]
+position = Vector2( 15104, 2176 )
+occluder = SubResource( 11 )
+
+[node name="Wall20" parent="Wals" index="20" instance=ExtResource( 2 )]
+position = Vector2( 15360, 1664 )
+occluder = SubResource( 11 )
+
+[node name="Wall21" parent="Wals" index="21" instance=ExtResource( 2 )]
+position = Vector2( 14336, 2432 )
+occluder = SubResource( 11 )
+
+[node name="Wall22" parent="Wals" index="22" instance=ExtResource( 2 )]
+position = Vector2( 14336, 2432 )
+occluder = SubResource( 11 )
+
+[node name="Wall23" parent="Wals" index="23" instance=ExtResource( 2 )]
+position = Vector2( 13568, 2688 )
+occluder = SubResource( 11 )
+
+[node name="Wall24" parent="Wals" index="24" instance=ExtResource( 2 )]
+position = Vector2( 13824, 2432 )
+occluder = SubResource( 11 )
+
+[node name="Wall25" parent="Wals" index="25" instance=ExtResource( 2 )]
+position = Vector2( 13312, 2944 )
+occluder = SubResource( 11 )
+
+[node name="Wall26" parent="Wals" index="26" instance=ExtResource( 2 )]
+position = Vector2( 13312, 2944 )
+occluder = SubResource( 11 )
+
+[node name="Wall55" parent="Wals" index="27" instance=ExtResource( 2 )]
+position = Vector2( 8288, 3712 )
+occluder = SubResource( 11 )
+
+[node name="Wall56" parent="Wals" index="28" instance=ExtResource( 2 )]
+position = Vector2( 3520, 3072 )
+occluder = SubResource( 11 )
+
+[node name="Wall27" parent="Wals" index="29" instance=ExtResource( 2 )]
+position = Vector2( 13824, 3200 )
+occluder = SubResource( 11 )
+
+[node name="Wall28" parent="Wals" index="30" instance=ExtResource( 2 )]
+position = Vector2( 14080, 3456 )
+occluder = SubResource( 11 )
+
+[node name="Wall29" parent="Wals" index="31" instance=ExtResource( 2 )]
+position = Vector2( 14592, 2944 )
+occluder = SubResource( 11 )
+
+[node name="Wall37" parent="Wals" index="32" instance=ExtResource( 2 )]
+position = Vector2( 14848, 2176 )
+occluder = SubResource( 11 )
+
+[node name="Wall38" parent="Wals" index="33" instance=ExtResource( 2 )]
+position = Vector2( 15616, 2432 )
+occluder = SubResource( 11 )
+
+[node name="Wall39" parent="Wals" index="34" instance=ExtResource( 2 )]
+position = Vector2( 16128, 3200 )
+occluder = SubResource( 11 )
+
+[node name="Wall40" parent="Wals" index="35" instance=ExtResource( 2 )]
+position = Vector2( 15872, 2432 )
+occluder = SubResource( 11 )
+
+[node name="Wall41" parent="Wals" index="36" instance=ExtResource( 2 )]
+position = Vector2( 16128, 1920 )
+occluder = SubResource( 11 )
+
+[node name="Wall42" parent="Wals" index="37" instance=ExtResource( 2 )]
+position = Vector2( 16640, 2688 )
+occluder = SubResource( 11 )
+
+[node name="Wall43" parent="Wals" index="38" instance=ExtResource( 2 )]
+position = Vector2( 16640, 2432 )
+occluder = SubResource( 11 )
+
+[node name="Wall44" parent="Wals" index="39" instance=ExtResource( 2 )]
+position = Vector2( 16384, 3200 )
+occluder = SubResource( 11 )
+
+[node name="Wall45" parent="Wals" index="40" instance=ExtResource( 2 )]
+position = Vector2( 15616, 3456 )
+occluder = SubResource( 11 )
+
+[node name="Wall46" parent="Wals" index="41" instance=ExtResource( 2 )]
+position = Vector2( 14336, 3456 )
+occluder = SubResource( 11 )
+
+[node name="Wall47" parent="Wals" index="42" instance=ExtResource( 2 )]
+position = Vector2( 14080, 3200 )
+occluder = SubResource( 11 )
+
+[node name="Wall48" parent="Wals" index="43" instance=ExtResource( 2 )]
+position = Vector2( 12544, 3456 )
+occluder = SubResource( 11 )
+
+[node name="Wall49" parent="Wals" index="44" instance=ExtResource( 2 )]
+position = Vector2( 13056, 2432 )
+occluder = SubResource( 11 )
+
+[node name="Wall50" parent="Wals" index="45" instance=ExtResource( 2 )]
+position = Vector2( 19456, 2432 )
+occluder = SubResource( 11 )
+
+[node name="Wall51" parent="Wals" index="46" instance=ExtResource( 2 )]
+position = Vector2( 19456, 3456 )
+occluder = SubResource( 11 )
+
+[node name="Wall52" parent="Wals" index="47" instance=ExtResource( 2 )]
+position = Vector2( 17920, 3456 )
+occluder = SubResource( 11 )
+
+[node name="Wall30" parent="Wals" index="48" instance=ExtResource( 2 )]
+position = Vector2( 14848, 3456 )
+occluder = SubResource( 11 )
+
+[node name="Wall31" parent="Wals" index="49" instance=ExtResource( 2 )]
+position = Vector2( 15616, 2688 )
+occluder = SubResource( 11 )
+
+[node name="Wall32" parent="Wals" index="50" instance=ExtResource( 2 )]
+position = Vector2( 15360, 3200 )
+occluder = SubResource( 11 )
+
+[node name="Wall33" parent="Wals" index="51" instance=ExtResource( 2 )]
+position = Vector2( 16128, 2944 )
+occluder = SubResource( 11 )
+
+[node name="Wall34" parent="Wals" index="52" instance=ExtResource( 2 )]
+position = Vector2( 16128, 2176 )
+occluder = SubResource( 11 )
+
+[node name="Wall35" parent="Wals" index="53" instance=ExtResource( 2 )]
+position = Vector2( 16384, 1664 )
+occluder = SubResource( 11 )
+
+[node name="Wall36" parent="Wals" index="54" instance=ExtResource( 2 )]
+position = Vector2( 16640, 1408 )
+occluder = SubResource( 11 )
+
+[node name="Wall53" parent="Wals" index="55" instance=ExtResource( 2 )]
+position = Vector2( 15840, -128 )
+occluder = SubResource( 12 )
+
+[node name="Wall54" parent="Wals" index="56" instance=ExtResource( 2 )]
+position = Vector2( 13920, 512 )
+occluder = SubResource( 13 )
+
+[node name="VoiceOver" parent="VoiceOvers" index="0" instance=ExtResource( 4 )]
+position = Vector2( 96, 256 )
+text = [ "Ah, another broken hearth, welcome.
+Lets try to mend you shall we." ]
+audio_stream = [ ExtResource( 5 ) ]
+delay = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VoiceOvers/VoiceOver" index="3"]
+position = Vector2( 32, -96 )
+shape = SubResource( 14 )
+
+[node name="VoiceOver2" parent="VoiceOvers" index="1" instance=ExtResource( 4 )]
+position = Vector2( 4992, 288 )
+text = [ "Sometimes love feels like a labyrinth,
+doesn't it." ]
+audio_stream = [ ExtResource( 6 ) ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VoiceOvers/VoiceOver2" index="4"]
+position = Vector2( 320, -96 )
+shape = SubResource( 15 )
+
+[node name="VoiceOver3" parent="VoiceOvers" index="2" instance=ExtResource( 4 )]
+position = Vector2( 2880, 2368 )
+text = [ "No matter what way you choose,
+it always seems to run into a dead end." ]
+audio_stream = [ ExtResource( 7 ) ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VoiceOvers/VoiceOver3" index="4"]
+position = Vector2( -320, -64 )
+shape = SubResource( 16 )
+
+[node name="VoiceOver4" parent="VoiceOvers" index="3" instance=ExtResource( 4 )]
+position = Vector2( 10240, 320 )
+text = [ "You can use the [Spacebar] to call out.
+Then just follow you heart and your ears." ]
+audio_stream = [ ExtResource( 8 ) ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VoiceOvers/VoiceOver4" index="4"]
+position = Vector2( 96, -192 )
+shape = SubResource( 17 )
+
+[node name="VoiceOver5" parent="VoiceOvers" index="4" instance=ExtResource( 4 )]
+position = Vector2( 7200, 3328 )
+text = [ "Could the right way feel wrong?" ]
+audio_stream = [ ExtResource( 9 ) ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VoiceOvers/VoiceOver5" index="4"]
+position = Vector2( 256, -256 )
+shape = SubResource( 18 )
+
+[node name="VoiceOver6" parent="VoiceOvers" index="5" instance=ExtResource( 4 )]
+position = Vector2( 7008, -2912 )
+text = [ "Could the wrong way feel right?" ]
+audio_stream = [ ExtResource( 10 ) ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VoiceOvers/VoiceOver6" index="4"]
+position = Vector2( 416, 224 )
+shape = SubResource( 19 )
+
+[node name="VoiceOver7" parent="VoiceOvers" index="6" instance=ExtResource( 4 )]
+position = Vector2( 18208, -960 )
+text = [ "Hey you found the puppies,
+look at you finding secrets and stuff!" ]
+audio_stream = [ ExtResource( 11 ) ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VoiceOvers/VoiceOver7" index="4"]
+position = Vector2( -32, 64 )
+shape = SubResource( 20 )
+
+[node name="Enemies" parent="." index="7"]
+position = Vector2( -960, -832 )

@@ -64,10 +64,12 @@ drag_margin_bottom = 0.1
 [node name="Beat1" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource( 4 )
 volume_db = -8.0
+bus = "Reverb"
 
 [node name="Beat2" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource( 5 )
 volume_db = -8.0
+bus = "Reverb"
 
 [node name="Beat1Timer" type="Timer" parent="Audio"]
 one_shot = true

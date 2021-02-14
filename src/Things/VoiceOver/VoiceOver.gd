@@ -1,34 +1,48 @@
 extends Area2D
 
+signal done
 
-export(String, MULTILINE) var text: String
-export(AudioStream) var audio_stream: AudioStream
+export(Array, String, MULTILINE) var text: Array
+export(Array, AudioStream) var audio_stream: Array
+export(int, 0, 5) var delay: int = 0
 
 
 onready var _voice_audio: AudioStreamPlayer = $AudioStreamPlayer
 onready var _label: Label = $CanvasLayer/Label
 onready var _tween: Tween = $Tween
+onready var _timer: Timer = $Timer
 
-
-func _ready() -> void:
-	_label.text = text
-	_voice_audio.stream = audio_stream
+var playing: bool = false
 
 
 func _on_VoiceOver_body_entered(body: Node) -> void:
-	if _voice_audio.playing:
+	if playing:
 		return
 
-	_voice_audio.play()
+	playing = true
 
-	_tween.interpolate_property(_label, "modulate:a", 0, 1, .5)
-	_tween.start()
+	_timer.wait_time = delay
 
-	yield(_voice_audio, "finished")
+	if delay > 0:
+		_timer.start()
+		yield(_timer, "timeout")
 
-	_tween.interpolate_property(_label, "modulate:a", 1, 0, 1, 0, 2, 3)
-	_tween.start()
+	for i in range(len(text)):
+		_label.text = text[i]
+		_voice_audio.stream = audio_stream[i]
 
-	yield(_tween, "tween_all_completed")
+		_voice_audio.play()
+
+		_tween.interpolate_property(_label, "modulate:a", 0, 1, .5)
+		_tween.start()
+
+		yield(_voice_audio, "finished")
+
+		_tween.interpolate_property(_label, "modulate:a", 1, 0, 1, 0, 2)
+		_tween.start()
+
+		yield(_tween, "tween_all_completed")
+
+	emit_signal("done")
 
 	queue_free()

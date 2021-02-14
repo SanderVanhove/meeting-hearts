@@ -34,4 +34,6 @@ __meta__ = {
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
 [connection signal="body_entered" from="." to="." method="_on_VoiceOver_body_entered"]
