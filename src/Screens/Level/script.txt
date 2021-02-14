@@ -20,3 +20,15 @@ Level 2:
 
 
 Level 3:
+1: Finally, here we will start the real healing process. No more fake love.
+2: Its a mirror. Are you surprised? Love comes from within us, before we can give it to others, we must have it for ourselves. Self love is the starting
+	point of your healing, but not the end.
+   Hey, thanks for playing the game and hanging out with me, I really appreciate it. Hope I didn't bum you out on valentines. Want to share your 
+	experience, give feedback or just say hi? Just contact me, I would love to hear from you. Bye bye now, have a great day!
+3: Ow look at that, you found my secret badge for secret-searchers. Congratulations!
+4: Is love the goal, or just one of life's joys?
+5: Don't forget that you can use [Spacebar] to call out.
+6: Maybe I'm too young to understand. Or maybe I'm too old to stop questioning. Maybe I'm never ready. Is that ok? I hope so.
+7: We are almost there, I feel it, they are gathering. 
+8: Ah, another dead end, don't worry too much about these. They are just part of life.
+9: You get a star for your excellent exploration! Well done!
