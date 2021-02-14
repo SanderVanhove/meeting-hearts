@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Screens/Level/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Things/Wall/Wall.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Things/VoiceOver/AudioLines/level2_07.wav" type="AudioStream" id=13]
 [ext_resource path="res://Things/VoiceOver/AudioLines/level2_05.wav" type="AudioStream" id=14]
 [ext_resource path="res://Things/VoiceOver/AudioLines/level2_06.wav" type="AudioStream" id=15]
+[ext_resource path="res://Things/VoiceOver/AudioLines/level2_08.wav" type="AudioStream" id=16]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 928, -736, 4448, -736, 5344, 192, 5494.96, 2844.58, 5152, 2880, 5184, 3136, 5510.13, 3111.1, 5568, 4128, 6553.09, 4152.63, 6848, 3808, 6816, -1280, -832, -1280, -832, 4160, 4512, 4160, 4447.17, 3260.47, 4832, 3168, 4800, 2912, 4425.19, 2955.53, 4256, 608, 4000, 288, 928, 288, 576, 96, 448, -128, 448, -352, 608, -640 )
@@ -135,8 +136,8 @@ shape = SubResource( 8 )
 [node name="VoiceOver3" parent="VoiceOvers" index="4" instance=ExtResource( 4 )]
 position = Vector2( 3712, 2688 )
 text = [ "Yet others want to lure people out of their shells,
-jumping out of the way at the right moment." ]
-audio_stream = [ ExtResource( 10 ) ]
+jumping out of the way at the right moment.", "Don't forget you can use the [Spacebar] to make more noise." ]
+audio_stream = [ ExtResource( 10 ), ExtResource( 16 ) ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VoiceOvers/VoiceOver3" index="4"]
 shape = SubResource( 9 )
