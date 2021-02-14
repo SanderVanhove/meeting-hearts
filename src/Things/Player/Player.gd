@@ -1,7 +1,10 @@
 extends KinematicBody2D
+class_name Player
 
 const ACCELERATION: float = 2300.0
 const MAX_SPEED: float = 1000.0
+
+var _goal: Goal
 
 onready var _beat1: AudioStreamPlayer2D = $Audio/Beat1
 onready var _beat2: AudioStreamPlayer2D = $Audio/Beat2
@@ -12,6 +15,7 @@ onready var _tween: Tween = $Tween
 onready var _visual: Node2D = $Visual
 onready var _light: Light2D = $Light
 onready var _joystick = $Joystick
+onready var _arrow: Arrow = $Arrow
 
 var _motion: Vector2 = Vector2.ZERO
 var _direction: Vector2 = Vector2.ZERO
@@ -19,6 +23,11 @@ var _direction: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	_light.visible = true
+
+
+func set_goal(goal: Node2D) -> void:
+	_goal = goal
+	_arrow.goal = _goal
 
 
 func _input(event: InputEvent) -> void:
@@ -52,12 +61,18 @@ func do_callout() -> void:
 	_beat1.play()
 	spawn_noise_ring(300)
 
+	_arrow.show_direction(true)
+
 	_callout_timer.start()
 	yield(_callout_timer, "timeout")
 
 	_beat2.play()
 	spawn_noise_ring(300)
 	yield(_beat2, "finished")
+
+	_arrow.show_direction(false)
+
+	_goal.do_callout()
 
 	_beat1_timer.start()
 	_beat1.volume_db = -8

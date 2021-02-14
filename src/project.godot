@@ -9,10 +9,25 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Sprite",
+"class": "Arrow",
+"language": "GDScript",
+"path": "res://Things/Player/Arrow.gd"
+}, {
+"base": "Sprite",
+"class": "Goal",
+"language": "GDScript",
+"path": "res://Things/Goal/Goal.gd"
+}, {
 "base": "Control",
 "class": "Joystick",
 "language": "GDScript",
 "path": "res://Things/Joystick/Joystick.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Things/Player/Player.gd"
 }, {
 "base": "Node2D",
 "class": "Ring",
@@ -20,7 +35,10 @@ _global_script_classes=[ {
 "path": "res://Things/Player/Ring.gd"
 } ]
 _global_script_class_icons={
+"Arrow": "",
+"Goal": "",
 "Joystick": "",
+"Player": "",
 "Ring": ""
 }
 

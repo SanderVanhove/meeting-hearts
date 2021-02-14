@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Things/Player/broken_player.png" type="Texture" id=1]
 [ext_resource path="res://Things/Player/Player.gd" type="Script" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Things/Player/highlight.png" type="Texture" id=6]
 [ext_resource path="res://Things/Joystick/Joystick.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Love.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Things/Player/arrow.png" type="Texture" id=9]
+[ext_resource path="res://Things/Player/Arrow.gd" type="Script" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 42
@@ -103,6 +105,14 @@ margin_right = 1822.55
 margin_bottom = 253.266
 custom_fonts/font = SubResource( 1 )
 text = "Call out"
+
+[node name="Arrow" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0, 3 )
+texture = ExtResource( 9 )
+script = ExtResource( 10 )
+
+[node name="Tween2" type="Tween" parent="Arrow"]
 [connection signal="timeout" from="Audio/Beat1Timer" to="." method="_on_Beat1Timer_timeout"]
 [connection signal="timeout" from="Audio/Beat2Timer" to="." method="_on_Beat2Timer_timeout"]
 [connection signal="pressed" from="Joystick/Button" to="." method="_on_Button_pressed"]

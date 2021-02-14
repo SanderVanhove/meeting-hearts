@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Things/Enemy/Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Things/Player/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Screens/Level/Level.gd" type="Script" id=5]
 [ext_resource path="res://Things/VoiceOver/VoiceOver.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Things/VoiceOver/AudioLines/oh_hey_welcome.wav" type="AudioStream" id=7]
+[ext_resource path="res://icon.png" type="Texture" id=8]
+[ext_resource path="res://Things/Goal/Goal.tscn" type="PackedScene" id=9]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 112, 176, 1440, 120, 2200, 1344, 3120, 1400, 3048, 2776, -168, 2816, -1912, 2368, -1296, 336, -264, 1064, -544, -160, -2896, 648, -2704, 2856, -1568, 3208, 4112, 3240, 3816, -488, -544, -168 )
@@ -22,6 +24,10 @@ script = ExtResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 482.951, 424 )
+
+[node name="Goal" parent="." instance=ExtResource( 9 )]
+position = Vector2( 29, 42 )
+texture = ExtResource( 8 )
 
 [node name="Enemy" parent="." instance=ExtResource( 1 )]
 position = Vector2( 317.94, 226.824 )
@@ -51,3 +57,5 @@ audio_stream = ExtResource( 7 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VoiceOver"]
 position = Vector2( 396.131, -18.7778 )
 shape = SubResource( 3 )
+
+[node name="Spawn" type="Node2D" parent="."]
