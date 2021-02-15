@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
+[ext_resource path="res://Screens/Level/music.wav" type="AudioStream" id=1]
 [ext_resource path="res://Things/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Things/VoiceOver/AudioLines/level1_05.wav" type="AudioStream" id=3]
 [ext_resource path="res://Util/Shaders/Smoke.tscn" type="PackedScene" id=4]
@@ -52,4 +53,9 @@ shape = SubResource( 1 )
 
 [node name="DeadTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -9.092
+autoplay = true
 [connection signal="done" from="VoiceOvers/EndVoiceOver" to="." method="_on_EndVoiceOver_done"]

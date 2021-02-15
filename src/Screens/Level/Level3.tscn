@@ -142,6 +142,7 @@ extents = Vector2( 352, 32 )
 extents = Vector2( 448, 32 )
 
 [node name="Level3" instance=ExtResource( 1 )]
+next_level = "res://Screens/Menu/Menu.tscn"
 
 [node name="Player" parent="." index="0"]
 visible = false
@@ -164,6 +165,9 @@ margin_left = -864.0
 margin_top = -7232.0
 margin_right = 15104.0
 margin_bottom = 4864.0
+
+[node name="Spawn" parent="." index="5"]
+position = Vector2( 0, 46 )
 
 [node name="Wall" parent="Wals" index="0" instance=ExtResource( 2 )]
 position = Vector2( -1056, 512 )
@@ -262,6 +266,7 @@ visible = false
 text = [ "Finally, here we will start the real healing process.
 No more fake love." ]
 audio_stream = [ ExtResource( 16 ) ]
+delay = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VoiceOvers/VoiceOver" index="4"]
 shape = SubResource( 32 )
@@ -603,7 +608,6 @@ shape = SubResource( 18 )
 
 [node name="Spawn2" parent="Spawns" index="1" instance=ExtResource( 4 )]
 position = Vector2( 10912, 512 )
-is_current = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawns/Spawn2" index="0"]
 shape = SubResource( 19 )
@@ -694,7 +698,6 @@ shape = SubResource( 30 )
 
 [node name="Spawn16" parent="Spawns" index="16" instance=ExtResource( 4 )]
 position = Vector2( 6784, -6304 )
-is_current = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawns/Spawn16" index="0"]
 position = Vector2( 64, 160 )

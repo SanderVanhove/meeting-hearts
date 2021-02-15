@@ -26,6 +26,7 @@ onready var _light: Light2D = $Light
 onready var _joystick = $Joystick
 onready var _arrow: Arrow = $Arrow
 onready var _hit: AudioStreamPlayer = $Audio/Hit
+onready var _highlight: Light2D = $Highlight
 
 var _motion: Vector2 = Vector2.ZERO
 var _direction: Vector2 = Vector2.ZERO
@@ -35,6 +36,7 @@ var _hit_sound_index: int = 0
 
 func _ready() -> void:
 	_light.visible = true
+	_highlight.visible = true
 
 
 func reset() -> void:
@@ -82,7 +84,7 @@ func do_callout() -> void:
 	_beat2.volume_db = 0
 
 	_beat1.play()
-	spawn_noise_ring(300)
+	spawn_noise_ring(350)
 
 	_arrow.show_direction(true)
 
