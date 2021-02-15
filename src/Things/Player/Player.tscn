@@ -99,7 +99,7 @@ margin_left = -864.666
 margin_top = 208.156
 margin_right = -564.666
 margin_bottom = 508.156
-joystick_mode = 1
+joystick_mode = 2
 vector_mode = 1
 visibility_mode = 1
 
@@ -110,6 +110,9 @@ margin_right = 1822.55
 margin_bottom = 253.266
 custom_fonts/font = SubResource( 1 )
 text = "Call out"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Arrow" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0 )

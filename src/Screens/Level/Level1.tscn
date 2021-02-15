@@ -92,6 +92,7 @@ scale = Vector2( 0.106482, 0.106482 )
 texture = ExtResource( 3 )
 
 [node name="Smoke" parent="." index="3"]
+visible = true
 margin_left = -576.0
 margin_top = -3744.0
 margin_right = 18816.0

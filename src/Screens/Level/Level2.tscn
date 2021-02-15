@@ -68,6 +68,7 @@ position = Vector2( 7200, 4192 )
 texture = ExtResource( 12 )
 
 [node name="Smoke" parent="." index="2"]
+visible = true
 margin_left = -1600.0
 margin_top = -800.0
 margin_right = 7840.0
