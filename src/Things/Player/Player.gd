@@ -23,7 +23,6 @@ onready var _callout_timer: Timer = $Audio/CalloutTimer
 onready var _tween: Tween = $Tween
 onready var _visual: Node2D = $Visual
 onready var _light: Light2D = $Light
-onready var _joystick = $Joystick
 onready var _arrow: Arrow = $Arrow
 onready var _hit: AudioStreamPlayer = $Audio/Hit
 onready var _highlight: Light2D = $Highlight
@@ -68,9 +67,6 @@ func _input(event: InputEvent) -> void:
 		direction.y += 1
 
 	_direction = direction.normalized()
-
-	if _joystick.visible:
-		_direction = _joystick.output
 
 	if event.is_action_pressed("call"):
 		do_callout()

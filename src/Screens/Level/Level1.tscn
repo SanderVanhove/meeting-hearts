@@ -91,14 +91,7 @@ position = Vector2( 18272, -928 )
 scale = Vector2( 0.106482, 0.106482 )
 texture = ExtResource( 3 )
 
-[node name="Smoke" parent="." index="3"]
-visible = true
-margin_left = -576.0
-margin_top = -3744.0
-margin_right = 18816.0
-margin_bottom = 3712.0
-
-[node name="Spawn" parent="." index="4"]
+[node name="Spawn" parent="." index="3"]
 position = Vector2( 0, 160 )
 
 [node name="Wall" parent="Wals" index="0" instance=ExtResource( 2 )]
@@ -402,5 +395,5 @@ audio_stream = [ ExtResource( 11 ) ]
 position = Vector2( -32, 64 )
 shape = SubResource( 21 )
 
-[node name="Enemies" parent="." index="7"]
+[node name="Enemies" parent="." index="6"]
 position = Vector2( -960, -832 )

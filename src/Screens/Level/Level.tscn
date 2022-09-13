@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Screens/Level/music.wav" type="AudioStream" id=1]
 [ext_resource path="res://Things/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Things/VoiceOver/AudioLines/level1_05.wav" type="AudioStream" id=3]
-[ext_resource path="res://Util/Shaders/Smoke.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Screens/Level/Level.gd" type="Script" id=5]
 [ext_resource path="res://Things/VoiceOver/VoiceOver.tscn" type="PackedScene" id=6]
 [ext_resource path="res://icon.png" type="Texture" id=8]
@@ -21,13 +20,6 @@ position = Vector2( 282.621, 103.553 )
 [node name="Goal" parent="." instance=ExtResource( 9 )]
 position = Vector2( 29, 42 )
 texture = ExtResource( 8 )
-
-[node name="Smoke" parent="." instance=ExtResource( 4 )]
-visible = false
-margin_left = -5461.0
-margin_top = -1670.0
-margin_right = 5114.0
-margin_bottom = 3729.0
 
 [node name="Spawn" type="Node2D" parent="."]
 
@@ -58,4 +50,5 @@ one_shot = true
 stream = ExtResource( 1 )
 volume_db = -9.092
 autoplay = true
+
 [connection signal="done" from="VoiceOvers/EndVoiceOver" to="." method="_on_EndVoiceOver_done"]

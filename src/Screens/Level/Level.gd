@@ -5,7 +5,6 @@ class_name Level
 export(String, FILE) var next_level: String
 
 
-onready var _smoke: ColorRect = $Smoke
 onready var _spawn: Node2D = $Spawn
 onready var _spawns: Node2D = $Spawns
 onready var _player: Player = $Player
@@ -22,7 +21,6 @@ func _ready() -> void:
 		if spawn.is_current:
 			_spawn = spawn
 
-	_smoke.visible = true
 	_player.position = _spawn.position
 	_player.visible = true
 	_player.connect("died", self, "player_respawn")
